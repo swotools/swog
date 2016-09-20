@@ -1,0 +1,60 @@
+{
+  "name": "swog",
+  "description": "solar web operator gui",
+  "version": "2.1.1",
+  "homepage": "http://www.agenziasmart.com",
+  "author": "The SWO Team (http://agenziasmart.com/chi)",
+  "license": "UNLICENSED",
+  "distdir": "dist",
+  "framework": {
+    "name": "bootstrap",
+    "version": "4.0.0-alpha.4",
+    "homepage": "http://getbootstrap.com",
+    "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
+    "contributors": [
+      "Twitter, Inc."
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://.git"
+  },
+  "scripts": {
+    "eslint": "eslint --config js/.eslintrc.json js/src",
+    "jscs": "jscs --config=js/.jscsrc js/src js/tests/unit docs/assets/js/src grunt Gruntfile.js docs/assets/js/ie-emulation-modes-warning.js docs/assets/js/ie10-viewport-bug-workaround.js",
+    "postcss": "postcss --config tasks/postcss.js --replace dist/css/*.css",
+    "test": "npm run eslint && npm run jscs && grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "glob": "~4.3.1",
+    "grunt-exec": "^1.0.0",
+    "grunt-babel": "^5.0.3",
+    "grunt-scss-lint": "^0.3.8",
+    "grunt-stamp": "^0.3.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-compress": "^1.1.0",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "~1.0.2",
+    "grunt-contrib-imagemin": "~0.9.4",
+    "grunt-contrib-sass": "~1.0.0",
+    "grunt-contrib-uglify": "~2.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "autoprefixer": "^6.0.3",
+    "babel-eslint": "^6.0.4",
+    "eslint": "^3.0.0",
+    "jscs": "^3.0.4",
+    "postcss-cli": "^2.5.2",
+    "postcss-flexbugs-fixes": "^2.0.0",
+    "shelljs": "^0.7.0",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "jquery": "1.9.1 - 3",
+    "tether": "^1.1.1"
+  }
+}

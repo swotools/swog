@@ -1,0 +1,54 @@
+.*
+*~
+tmp/
+dist/
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+# node-waf configuration
+.lock-wscript
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules/
+# Optional npm cache directory
+.npm/
+# Optional REPL history
+.node_repl_history/
+# Sass cache
+.sass-cache/
+
+composer.lock
+vendor/
+cache/
+#NETBEANS
+nbproject/
+build/
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+.settings/
+# Packages #
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+# Logs and databases #
+logs/
+*.log
+*.sqlite
+# OS generated files #
+.DS_Store*
+Thumbs.db
+
+!.gitignore
+!.htaccess
+!.gitkeep
+!.editorconfig
+!.gitattributes
