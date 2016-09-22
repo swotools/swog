@@ -6,6 +6,7 @@
   "author": "The SWO Team (http://agenziasmart.com/chi)",
   "license": "UNLICENSED",
   "distdir": "dist",
+  "publicdir": "public/static",
   "framework": {
     "name": "bootstrap",
     "version": "4.0.0-alpha.4",
