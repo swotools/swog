@@ -17,9 +17,9 @@ $ npm update
 ## Styling with swo.sass using npm grunt
 
 Task            | Description
-:-------------- | :-------------------------------------------------------------------------------
+:-------------- | :--------------------------------------------------------------------------------------------
 grunt           | Compila dist
-grunt dist      | Compila bootstrap e swog, crea script e style minimizzati - output swog_core.css
+grunt dist      | Compila bootstrap e swog, crea script e style minimizzati - output swog_core.css in publicdir
 grunt watch     | Aggiorna automaticamente js e css se modificati dalle cartelle ./scss e ./js
 grunt watch:js  | Aggiorna alla modifica js - esegue dist:js
 grunt watch:css | Aggiorna alla modifica js - esegue dist:css
@@ -34,20 +34,20 @@ Modifica il file `variables.scss` in `./scss/bs4`
 
 Gli stili del sito li scrivi in SASS nel file `stile.scss` , le variabili le metti nel file `variabili.scss` ovviamente in SASS
 
-
-##### stile.scss
+#### stile.scss
 
 ```css
 * {margin: 0;padding: 0;}
 body {padding-top: 50px;overflow-x: hidden;}
 .oggi{
-	background-color: $giallo;
+    background-color: $giallo;
 }
 ```
+
 #### variabili.scss
 
 ```css
-$giallo:	#ffcc00 !default;
+$giallo:    #ffcc00 !default;
 $blusmart: #rgb(0, 42, 190);
 ```
 
@@ -60,9 +60,10 @@ Per escludere libreria JS da bootstrap commenta riga in file `concat.js` del tas
 ### SWOG
 
 #### general.js
+
 Utilizza il file `general.js` in `./js/swog` .
 
-```js
+```javascript
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   var msViewportStyle = document.createElement('style');
   msViewportStyle.appendChild(
@@ -86,23 +87,9 @@ function prova(al) {
 }
 ```
 
-
 ## Clonare gui nei motori SWO
-Nella root di _pocket_ o di _swo__ digita:
 
-```code
-git clone https://deltapapa@bitbucket.org/fvoxlab/swog.git
-```
-Poi installa npm packages
-
-```code
-npm install
-```
-Poi lancia grunt (dist default)
-
-```code
-grunt
-```
+Nella root di _pocket_ o di _swo__ digita viene incluso nel require repo
 
 ## Compilare html con emmet
 
@@ -117,6 +104,8 @@ Docs -> <http://docs.emmet.io>
 ## ToDO
 
 - test grunt watch swog
+- watch swogcss
+- watch swogjs
 
 ## Note
 

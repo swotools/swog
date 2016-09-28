@@ -1,0 +1,25 @@
+{
+  "name": "fvoxlab/swog",
+  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "keywords": [
+    "css",
+    "js",
+    "web"
+  ],
+  "homepage": "http://solarwo.com",
+  "authors": [
+    {
+      "name": "Mark Otto",
+      "email": "markdotto@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/twbs/bootstrap/issues"
+  },
+  "license": "MIT",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.2.0"
+    }
+  }
+}
