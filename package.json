@@ -5,7 +5,7 @@
   "homepage": "http://www.agenziasmart.com",
   "author": "The SWO Team (http://agenziasmart.com/chi)",
   "license": "UNLICENSED",
-  "distdir": "dist",
+  "distdir": "public/static",
   "framework": {
     "name": "bootstrap",
     "version": "4.0.0-alpha.4",
@@ -22,8 +22,9 @@
   "scripts": {
     "eslint": "eslint --config js/.eslintrc.json js/src",
     "jscs": "jscs --config=js/.jscsrc js/src js/tests/unit docs/assets/js/src grunt Gruntfile.js docs/assets/js/ie-emulation-modes-warning.js docs/assets/js/ie10-viewport-bug-workaround.js",
-    "postcss": "postcss --config tasks/postcss.js --replace dist/css/*.css",
-    "test": "npm run eslint && npm run jscs && grunt test"
+    "postcss": "postcss --config tasks/postcss.js --replace public/static/css/*.css",
+    "test": "npm run eslint && npm run jscs && grunt test",
+    "swogdist": "python bin/python/swogdist.py"
   },
   "devDependencies": {
     "grunt": "~1.0.1",

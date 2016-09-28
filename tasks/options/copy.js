@@ -1,4 +1,19 @@
 module.exports = {
+	pubcss: {
+		files: [{
+			src: ['<%=pkg.distdir%>/css/swog_core.css'],
+			dest: '<%=pkg.devdir%>/css/swog.css'
+		}],
+	},
+	pubjs: {
+		files: [{
+			src: ['<%=pkg.distdir%>/js/swog.min.js'],
+			dest: '<%=pkg.devdir%>/js/swog.js'
+		}, {
+			src: ['<%=pkg.distdir%>/js/bootstrap.min.js'],
+			dest: '<%=pkg.devdir%>/js/bootstrap.js'
+		}],
+	},
 	fonts: {
 		files: [
 			// includes files within path
@@ -11,49 +26,6 @@ module.exports = {
 				src: ['**'],
 				dest: '<%=pkg.distdir%>/fonts/'
 			},
-
 		],
-	},
-	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DA QUI IN GIU
-	//non si usa perchè quando compilati vengono gia messi in distribuzione!! (/static/template)
-	css: {
-		files: [{
-				expand: true,
-				cwd: '<%=devdir%>/css/',
-				src: ['**'],
-				dest: '<%=pkg.distdir%>/css/'
-			},
-
-		],
-	},
-	js: {
-		files: [{
-				expand: true,
-				cwd: '<%=devdir%>/js/',
-				src: ['**'],
-				dest: '<%=pkg.distdir%>/js/'
-			},
-
-		],
-	},
-	template: {
-		files: [{
-				expand: true,
-				cwd: '<%=devdir%>/template/',
-				src: ['**'],
-				dest: '<%=pkg.distdir%>/template/'
-			},
-
-		],
-	},
-	images: {
-		files: [{
-				expand: true,
-				cwd: '<%=devdir%>/i/',
-				src: ['**'],
-				dest: '<%=pkg.distdir%>/i/'
-			},
-
-		]
 	}
 };

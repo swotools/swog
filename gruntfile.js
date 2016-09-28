@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	// Default Task is basically a rebuild
-	grunt.registerTask('default', ['dist']);
+	grunt.registerTask('default', ['dev']);
 	// Moved to the tasks folder:
 	// grunt.registerTask('dev', ['connect', 'watch']);
 

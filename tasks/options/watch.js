@@ -6,7 +6,10 @@ module.exports = {
 	},
 	css: {
 		files: 'scss/**/*.scss',
-		tasks: ['dist-css']
+		tasks: ['dist-css', 'copy:pubcss']
+	},
+	swogcss: {
+		files: 'scss/swog/*.scss',
+		tasks: ['sass:swog','exec:postcss']
 	}
-
 };
