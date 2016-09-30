@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 			'  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] >= 4)) {\n' +
 			'    throw new Error(\'Bootstrap\\\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0\')\n' +
 			'  }\n' +
-			'}(jQuery);\n\n'
+			'}(jQuery);\n\n',
 	};
 
 	// Load tasks from the tasks folder
@@ -49,9 +49,27 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 
+	grunt.registerTask('dev-jsbs', [
+		'clean:bsjs',
+		'babel:bsdev',
+		'concat:bootstrap',
+		'babel:bsdist'
+	]);
+	grunt.registerTask('dev-jsswog', [
+		'clean:swogjs',
+		'concat:swog',
+	]);
+	grunt.registerTask('dev-bscss', [
+		'clean:bscss',
+		'sass:bootstrap',
+	]);
+
+	grunt.registerTask('dev-swogcss', [
+		'clean:swogcss',
+		'sass:swog',
+	]);
 	// Default Task is basically a rebuild
 	grunt.registerTask('default', ['dev']);
 	// Moved to the tasks folder:
 	// grunt.registerTask('dev', ['connect', 'watch']);
-
 };

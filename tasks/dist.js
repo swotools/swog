@@ -1,3 +1,3 @@
 module.exports = function(grunt) {
-	grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'public']);
+	grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js']);
 };

@@ -23,8 +23,7 @@
     "eslint": "eslint --config js/.eslintrc.json js/src",
     "jscs": "jscs --config=js/.jscsrc js/src js/tests/unit docs/assets/js/src grunt Gruntfile.js docs/assets/js/ie-emulation-modes-warning.js docs/assets/js/ie10-viewport-bug-workaround.js",
     "postcss": "postcss --config tasks/postcss.js --replace public/static/css/*.css",
-    "test": "npm run eslint && npm run jscs && grunt test",
-    "swogdist": "python bin/python/swogdist.py"
+    "test": "npm run eslint && npm run jscs && grunt test"
   },
   "devDependencies": {
     "grunt": "~1.0.1",

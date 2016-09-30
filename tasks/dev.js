@@ -1,3 +1,8 @@
 module.exports = function(grunt) {
-	grunt.registerTask('dev', ['clean:dist', 'dev-css', 'dev-js']);
+	grunt.registerTask('dist', [
+		'dev-jsbs',
+		'dev-jsswog',
+		'dev-bscss',
+		'dev-swogcss'
+	]);
 };

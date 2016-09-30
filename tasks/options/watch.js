@@ -1,15 +1,15 @@
 module.exports = {
 
-	js: {
-		files: 'js/**/*.js',
-		tasks: ['dist-js']
-	},
-	css: {
-		files: 'scss/**/*.scss',
-		tasks: ['dist-css', 'copy:pubcss']
+	bscss: {
+		files: 'scss/bs4/**/*.scss',
+		tasks: ['dev-bscss']
 	},
 	swogcss: {
 		files: 'scss/swog/*.scss',
-		tasks: ['sass:swog','exec:postcss']
+		tasks: ['dev-swogcss']
+	},
+	allcss: {
+		files: 'scss/**/*.scss',
+		tasks: ['dev-bscss', 'dev-swogcss']
 	}
 };
