@@ -16,13 +16,17 @@ $ npm update
 
 ## Styling with swo.sass using npm grunt
 
-Task            | Description
-:-------------- | :--------------------------------------------------------------------------------------------
-grunt           | Compila dist
-grunt dist      | Compila bootstrap e swog, crea script e style minimizzati - output swog_core.css in publicdir
-grunt watch     | Aggiorna automaticamente js e css se modificati dalle cartelle ./scss e ./js
-grunt watch:js  | Aggiorna alla modifica js - esegue dist:js
-grunt watch:css | Aggiorna alla modifica js - esegue dist:css
+Task                | Description
+:------------------ | :-------------------------------------
+grunt               | Compila tutti task dev-** (qui sotto)
+grunt dev-jsbs      | Compila js bootstrap
+grunt dev-jsswog    | Compila js swog
+grunt dev-bscss     | Compila i SASS di bootstrap
+grunt dev-swogcss   | Compila i SASS di swog
+grunt watch         | Ascolta i task qui sotto
+grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
+grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
+grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 
 ## Personalizzare Sass
 
@@ -55,7 +59,7 @@ $blusmart: #rgb(0, 42, 190);
 
 ### Bootstrap
 
-Per escludere libreria JS da bootstrap commenta riga in file `concat.js` del task
+Per escludere libreria JS da bootstrap commenta riga in file `./task/options/concat.js` del task
 
 ### SWOG
 
@@ -87,10 +91,6 @@ function prova(al) {
 }
 ```
 
-## Clonare gui nei motori SWO
-
-Nella root di _pocket_ o di _swo__ digita viene incluso nel require repo
-
 ## Compilare html con emmet
 
 ```code
@@ -103,9 +103,6 @@ Docs -> <http://docs.emmet.io>
 
 ## ToDO
 
-- test grunt watch swog
-- watch swogcss
-- watch swogjs
 
 ## Note
 

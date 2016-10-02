@@ -8,8 +8,8 @@ module.exports = {
 		files: 'scss/swog/*.scss',
 		tasks: ['dev-swogcss']
 	},
-	allcss: {
-		files: 'scss/**/*.scss',
-		tasks: ['dev-bscss', 'dev-swogcss']
+	swogjs: {
+		files: 'js/swog/*.js',
+		tasks: ['dev-swogcss']
 	}
 };
