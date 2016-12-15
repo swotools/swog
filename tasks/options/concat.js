@@ -3,8 +3,7 @@ module.exports = {
 		// Custom function to remove all export and import statements
 		process: function(src) {
 			return src.replace(/^(export|import).*/gm, '');
-		},
-		stripBanners: false
+		}
 	},
 	bootstrap: {
 		src: [
