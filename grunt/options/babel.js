@@ -19,7 +19,7 @@ module.exports = {
 	},
 	bsdist: {
 		options: {
-			extends: '../../js/.babelrc'
+			extends: '../../../js/.babelrc'
 		},
 		files: {
 			'<%= concat.bootstrap.dest %>' : '<%= concat.bootstrap.dest %>'

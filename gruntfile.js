@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
-
+	'use strict';
+	// Force use of Unix newlines
+	grunt.util.linefeed = '\n';
 	// Utility to load the different option files
 	function loadConfig(path) {
 		var glob = require('glob');
@@ -38,35 +40,51 @@ module.exports = function(grunt) {
 			'}(jQuery);\n\n',
 	};
 
-	// Load tasks from the tasks folder
-	grunt.loadTasks('./tasks');
-
 	// Load all the tasks options in tasks/options base on the name:
 	// watch.js => watch{}
-	grunt.util._.extend(config, loadConfig('./tasks/options/'));
+	grunt.util._.extend(config, loadConfig('./grunt/options/'));
 
 	grunt.initConfig(config);
 
-	require('load-grunt-tasks')(grunt);
+	require('load-grunt-tasks')(grunt, {
+		scope: 'devDependencies',
+		// Exclude Sass compilers. We choose the one to load later on.
+		pattern: ['grunt-*', '!grunt-sass', '!grunt-contrib-sass']
+	});
+
+	// CSS distribution task.
+	// Supported Compilers: sass (Ruby) and libsass.
+	(function(sassCompilerName) {
+		require('./grunt/tasks/sass-compile/' + sassCompilerName + '.js')(grunt);
+		grunt.log.writeln('Ciao ' + sassCompilerName);
+
+	})(process.env.SWO_SASS || 'libsass');
+
+	// Load tasks from the tasks folder
+	grunt.loadTasks('./grunt/tasks');
 
 	grunt.registerTask('dev-jsbs', [
 		'clean:bsjs',
 		'babel:bsdev',
 		'concat:bootstrap',
-		'babel:bsdist'
+		'babel:bsdist',
+		'stamp:bootstrap'
 	]);
 	grunt.registerTask('dev-jsswog', [
 		'clean:swogjs',
 		'concat:swog',
+		'stamp:swog'
 	]);
 	grunt.registerTask('dev-bscss', [
 		'clean:bscss',
 		'sass:bootstrap',
+		'exec:postcss'
 	]);
 
 	grunt.registerTask('dev-swogcss', [
 		'clean:swogcss',
 		'sass:swog',
+		'exec:postcss'
 	]);
 	// Default Task is basically a rebuild
 	grunt.registerTask('default', ['dev']);
