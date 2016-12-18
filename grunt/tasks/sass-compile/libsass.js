@@ -13,7 +13,7 @@ module.exports = function configureLibsass(grunt) {
       },
       bootstrap: {
         files: {
-    			'<%=pkg.distdir%>/css/<%= pkg.framework.name %>.css': './scss/bs4/<%= pkg.framework.name %>.scss'
+    			'<%=pkg.distdir%>/css/<%= pkg.framework.name %>.css': './scss/bs3/<%= pkg.framework.name %>.scss'
     		}
       },
       extras: {

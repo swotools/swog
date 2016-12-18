@@ -65,9 +65,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('dev-jsbs', [
 		'clean:bsjs',
-		'babel:bsdev',
 		'concat:bootstrap',
-		'babel:bsdist',
 		'stamp:bootstrap'
 	]);
 	grunt.registerTask('dev-jsswog', [

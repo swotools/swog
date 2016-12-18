@@ -1,7 +1,7 @@
 module.exports = {
 
 	bscss: {
-		files: 'scss/bs4/**/*.scss',
+		files: 'scss/bs3/**/*.scss',
 		tasks: ['dev-bscss']
 	},
 	swogcss: {

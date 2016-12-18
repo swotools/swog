@@ -7,17 +7,17 @@ module.exports = {
 	},
 	bootstrap: {
 		src: [
-			'js/bs4/util.js',
-			'js/bs4/alert.js',
-			'js/bs4/button.js',
-			'js/bs4/carousel.js',
-			'js/bs4/collapse.js',
-			'js/bs4/dropdown.js',
-			'js/bs4/modal.js',
-			'js/bs4/scrollspy.js',
-			'js/bs4/tab.js',
-			'js/bs4/tooltip.js',
-			'js/bs4/popover.js'
+			'js/bs3/util.js',
+			'js/bs3/alert.js',
+			'js/bs3/button.js',
+			'js/bs3/carousel.js',
+			'js/bs3/collapse.js',
+			'js/bs3/dropdown.js',
+			'js/bs3/modal.js',
+			'js/bs3/scrollspy.js',
+			'js/bs3/tab.js',
+			'js/bs3/tooltip.js',
+			'js/bs3/popover.js'
 		],
 		dest: '<%=pkg.distdir%>/js/<%= pkg.framework.name %>.js'
 	},

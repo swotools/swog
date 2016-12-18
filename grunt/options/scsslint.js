@@ -5,6 +5,6 @@ module.exports = {
 		reporterOutput: null
 	},
 	bootstrap: {
-		src: ['scss/**/*.scss', '!scss/bs4/_normalize.scss']
+		src: ['scss/**/*.scss', '!scss/bs3/_normalize.scss']
 	}
 };

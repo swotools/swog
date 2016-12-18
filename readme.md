@@ -32,7 +32,7 @@ grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 
 ### Bootstrap
 
-Modifica il file `variables.scss` in `./scss/bs4`
+Modifica il file `variables.scss` in `./scss/bs3`
 
 ### SWOG
 
