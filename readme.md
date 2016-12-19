@@ -15,7 +15,7 @@ $ npm update
 ```
 
 ## Styling with swo.sass using npm grunt
--- da sistemare
+
 Task                | Description
 :------------------ | :-------------------------------------
 grunt               | Compila tutti task dev-** (qui sotto)
