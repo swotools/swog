@@ -47,7 +47,10 @@ logs/
 # OS generated files #
 .DS_Store*
 Thumbs.db
-
+!.eslintrc.json
+!.scss-lint.yml
+!.jshintrc
+!.jscsrc
 !.gitignore
 !.htaccess
 !.gitkeep

@@ -1,6 +1,6 @@
 # SWOG / Graphic Framework
 
-- Bootstrap framework
+- Bootstrap framework v.3.3.7
 - Sass
 - Js
 - Nodejs
@@ -15,7 +15,7 @@ $ npm update
 ```
 
 ## Styling with swo.sass using npm grunt
-
+-- da sistemare
 Task                | Description
 :------------------ | :-------------------------------------
 grunt               | Compila tutti task dev-** (qui sotto)
@@ -32,7 +32,7 @@ grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 
 ### Bootstrap
 
-Modifica il file `variables.scss` in `./scss/bs3`
+Modifica il file `variables.scss` in `./scss/bs3/bootstrap/`
 
 ### SWOG
 
@@ -70,7 +70,6 @@ Bootstrap will be compiled with [libsass][libsass] by default, but you can opt i
 * `sass` to use [Ruby Sass][ruby-sass] via [grunt-contrib-sass][grunt-contrib-sass].
 
 For example, run `SWO_SASS=sass grunt` to test and build Bootstrap with Ruby Sass.
-
 
 ### SWOG
 
@@ -114,7 +113,18 @@ Docs -> <http://docs.emmet.io>
 
 ## ToDO
 
+-- Grunt task dev , poi il dist che lavora su dev!
+-- scss lint da terminale, jscs, eslint
+
 
 ## Note
+
+Quando importi da TWBS SASS, rinomina i file
+* _bootstrap.scss
+* _bootstrap-sprockets.scss
+* _bootstrap-mincer.scss
+* _bootstrap-compass.scss
+
+SENZA UNDERSCORE!
 
 "glob": "~4.3.1", - serve per includere i task first cm 5-8-16

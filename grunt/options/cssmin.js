@@ -1,6 +1,7 @@
 module.exports = {
 	options: {
-		compatibility: 'ie9,-properties.zeroUnits',
+		compatibility: 'ie8,-properties.zeroUnits',
+		keepSpecialComments: '*',
 		sourceMap: true,
 		// sourceMapInlineSources: true,
 		advanced: false

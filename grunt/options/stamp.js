@@ -1,8 +1,7 @@
 module.exports = {
 	bootstrap: {
 		options: {
-			banner: '<%= bsbanner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>\n+function () {\n',
-			footer: '\n}();'
+			banner: '<%= bsbanner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>\n',
 		},
 		files: {
 			src: '<%= concat.bootstrap.dest %>'
@@ -10,8 +9,7 @@ module.exports = {
 	},
 	swog: {
 		options: {
-			banner: '<%= banner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>\n+function () {\n',
-			footer: '\n}();'
+			banner: '<%= banner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>\n',
 		},
 		files: {
 			src: '<%= concat.swog.dest %>'

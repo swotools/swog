@@ -33,8 +33,9 @@ module.exports = function(grunt) {
 			'  throw new Error(\'Bootstrap\\\'s JavaScript requires jQuery\')\n' +
 			'}\n',
 		jqueryVersionCheck: '+function ($) {\n' +
+			'\'use strict\';\n' +
 			'  var version = $.fn.jquery.split(\' \')[0].split(\'.\')\n' +
-			'  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] >= 4)) {\n' +
+			'  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] >= 3)) {\n' +
 			'    throw new Error(\'Bootstrap\\\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0\')\n' +
 			'  }\n' +
 			'}(jQuery);\n\n',
@@ -65,24 +66,19 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('dev-jsbs', [
 		'clean:bsjs',
-		'concat:bootstrap',
-		'stamp:bootstrap'
+		'concat:bootstrap'
 	]);
 	grunt.registerTask('dev-jsswog', [
 		'clean:swogjs',
-		'concat:swog',
-		'stamp:swog'
+		'concat:swog'
 	]);
 	grunt.registerTask('dev-bscss', [
 		'clean:bscss',
 		'sass:bootstrap',
-		'exec:postcss'
 	]);
-
 	grunt.registerTask('dev-swogcss', [
 		'clean:swogcss',
 		'sass:swog',
-		'exec:postcss'
 	]);
 	// Default Task is basically a rebuild
 	grunt.registerTask('default', ['dev']);

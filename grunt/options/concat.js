@@ -7,17 +7,18 @@ module.exports = {
 	},
 	bootstrap: {
 		src: [
-			'js/bs3/util.js',
+			'js/bs3/transition.js',
 			'js/bs3/alert.js',
 			'js/bs3/button.js',
 			'js/bs3/carousel.js',
 			'js/bs3/collapse.js',
 			'js/bs3/dropdown.js',
 			'js/bs3/modal.js',
+			'js/bs3/tooltip.js',
+			'js/bs3/popover.js',
 			'js/bs3/scrollspy.js',
 			'js/bs3/tab.js',
-			'js/bs3/tooltip.js',
-			'js/bs3/popover.js'
+			'js/bs3/affix.js'
 		],
 		dest: '<%=pkg.distdir%>/js/<%= pkg.framework.name %>.js'
 	},
