@@ -5,7 +5,7 @@
 # **********************
 set -e
 SWOG_COPY=( "package.json" "gruntfile.js" "grunt" "scss" "js" )
-SWOG_NODEMODULES = 'node_modules'
+DIRSWOG="vendor/fvoxlab/swog"
 
 # TOD
 # Copiare anche il file bin/bash/install.sh
@@ -18,7 +18,7 @@ if [ ! -f 'package.json' ];then
   echo "SWOG installing .."
   for i in "${SWOG_COPY[@]}"
   do
-     if cp -R $DIRSWOG/$i $PROJECTDIR
+     if cp -R $DIRSWOG/$i /
      then echo "$i OK"
   else
      echo "$i FAILED!"
@@ -29,10 +29,10 @@ fi
 
 
 # Run Grunt tasks
-if [ ! -d $DIRNODEMOD ];then
+if [ ! -d 'node_modules' ];then
   echo "NPM installing ..."
-  npm install --quiet --silent
-  sleep 1
+  # npm install --quiet --silent
+  # sleep 1
 #else
   #rm -rf node_modules
 fi
