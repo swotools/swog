@@ -1,0 +1,4 @@
+#!/bin/bash
+
+## segnaposto
+DIRSWOG="/"
