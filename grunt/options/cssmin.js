@@ -2,7 +2,7 @@ module.exports = {
 	options: {
 		compatibility: 'ie8,-properties.zeroUnits',
 		keepSpecialComments: '*',
-		sourceMap: true,
+		sourceMap: false,
 		// sourceMapInlineSources: true,
 		advanced: false
 	},
