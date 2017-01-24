@@ -7,6 +7,10 @@ module.exports = {
 		files: 'scss/swog/*.scss',
 		tasks: ['dev-swogcss', 'exec:postcss']
 	},
+	allcss: {
+		files: 'scss/**/*.scss',
+		tasks: ['dev-bscss', 'dev-swogcss', 'exec:postcss']
+	},
 	swogjs: {
 		files: 'js/swog/*.js',
 		tasks: ['dev-swogcss']
