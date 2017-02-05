@@ -1,16 +1,18 @@
 {
   "name": "fvoxlab/swog",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "description": "Solar Web Operator - Graphic Unit Interface",
   "keywords": [
     "css",
     "js",
-    "web"
+    "web",
+    "swo",
+    "agenziasmart"
   ],
   "homepage": "http://solarwo.com",
   "authors": [
     {
-      "name": "Mark Otto",
-      "email": "markdotto@gmail.com"
+      "name": "Davide Pellegrino",
+      "email": "dp@agenziasmart.com"
     }
   ],
   "support": {
