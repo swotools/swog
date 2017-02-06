@@ -19,6 +19,7 @@ module.exports = {
 			compress: {
 				warnings: false
 			},
+			preserveComments: false,
 			mangle: false
 		},
 		src: ['<%= concat.bootstrap.dest %>','<%= concat.swog.dest %>'],
