@@ -1,9 +1,9 @@
 {
   "name": "swog",
-  "description": "solar web operator gui",
+  "description": "SWOG Bootstrap 3.3.7",
   "version": "1.3.7",
   "homepage": "http://www.agenziasmart.com",
-  "author": "The SWO Team (http://agenziasmart.com/about)",
+  "author": "The SWO Team (http://agenziasmart.com/swo)",
   "license": "UNLICENSED",
   "distdir": "public/static",
   "framework": {

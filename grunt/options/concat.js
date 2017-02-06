@@ -27,12 +27,5 @@ module.exports = {
 			'js/swog/general.js'
 		],
 		dest: '<%=pkg.distdir%>/js/<%= pkg.name %>.js'
-	},
-	dist: {
-		src: [
-			'<%= concat.bootstrap.dest %>',
-			'<%= concat.swog.dest %>',
-		],
-		dest: '<%=pkg.distdir%>/js/<%= pkg.name %>_core.js'
 	}
 };

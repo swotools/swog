@@ -117,6 +117,8 @@ Docs -> <http://docs.emmet.io>
 -- scss lint da terminale, jscs, eslint
 
 
+-- RENDERE SWOG AUTONOMO, AUTOINSTALLANTE SENZA SOURCE FILE!!
+
 ## Note
 
 Quando importi da TWBS SASS, rinomina i file

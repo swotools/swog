@@ -2,7 +2,7 @@ module.exports = {
 	options: {
 		compatibility: 'ie8,-properties.zeroUnits',
 		keepSpecialComments: '*',
-		sourceMap: true,
+		sourceMap: false,
 		// sourceMapInlineSources: true,
 		advanced: false
 	},
@@ -10,9 +10,17 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%=pkg.distdir%>/css',
-			src: ['*.css', '!*.min.css'],
+			src: ['*.css', '!*.min.css', '!style.css'],
 			dest: '<%=pkg.distdir%>/css',
 			ext: '.min.css'
 		}]
+	},
+	dist: {
+		options: {
+			keepSpecialComments: 0
+		},
+		files: {
+			'<%=pkg.distdir%>/css/style.css': ['<%=pkg.distdir%>/css/*.min.css']
+		}
 	}
 };
