@@ -6,8 +6,10 @@ set -e # Exit script on error
 # SWOG è installato in vendor/fvoxlab/swog
 VENDORDIR='vendor/fvoxlab/swog'
 BASEDIR=$1
-# i file da aggiornare nella root del progetto
-SWOG_COPY=( "package.json" "gruntfile.js" "grunt" )
+# i file da aggiornare nella root del progetto.
+# Escludo options perchè ogni singolo progetto può modificare parametri
+# es. Concat, esclude js di carousel etc..
+SWOG_COPY=( "package.json" "gruntfile.js" "grunt/tasks" "grunt/postcss.js" )
 
 if [ -z $BASEDIR ]; then
    echo "SWOG base dir is Empty"
