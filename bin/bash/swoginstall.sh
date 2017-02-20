@@ -20,7 +20,7 @@ if [ ! -f "$BASEDIR/package.json" ];then
   echo "SWOG installing ..."
   for fsobject in "${SWOG_COPY[@]}";do
     # if cp -r "$VENDORDIR/$fsobject" $BASEDIR;then
-    if rsync -a "$VENDORDIR/$fsobject" $BASEDIR;
+    if rsync -a "$VENDORDIR/$fsobject" $BASEDIR;then
       echo "$fsobject OK"
     else
       echo "$fsobject FAILED!"
