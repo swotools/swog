@@ -113,11 +113,7 @@ Docs -> <http://docs.emmet.io>
 
 ## ToDO
 
--- Grunt task dev , poi il dist che lavora su dev!
 -- scss lint da terminale, jscs, eslint
-
-
--- RENDERE SWOG AUTONOMO, AUTOINSTALLANTE SENZA SOURCE FILE!!
 
 ## Note
 
