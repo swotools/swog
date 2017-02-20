@@ -17,15 +17,15 @@ if [ -z $BASEDIR ]; then
 fi
 # SE E SOLO SE, NON TROVO i file di SWOG COPY nella root del progetto
 if [ ! -f "$BASEDIR/package.json" ];then
-  echo "SWOG installing .."
+  echo "SWOG installing ..."
   for fsobject in "${SWOG_COPY[@]}";do
-    if cp -R "$VENDORDIR/$fsobject" $BASEDIR;then
+    # if cp -r "$VENDORDIR/$fsobject" $BASEDIR;then
+    if rsync -a "$VENDORDIR/$fsobject" $BASEDIR;
       echo "$fsobject OK"
     else
       echo "$fsobject FAILED!"
     fi
   done
-  sleep 1
 else
   echo "SWOG is installed"
 fi
