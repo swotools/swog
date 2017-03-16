@@ -9,11 +9,14 @@
     "agenziasmart"
   ],
   "homepage": "http://solarwo.com",
-  "authors": [
-    {
-      "name": "Davide Pellegrino",
-      "email": "dp@agenziasmart.com"
+  "authors": [{
+    "name": "Davide Pellegrino",
+    "email": "dp@agenziasmart.com"
+  }],
+  "license": "MIT",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.2.0"
     }
-  ],
-  "license": "MIT"
+  }
 }
