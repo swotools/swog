@@ -1,5 +1,5 @@
 {
-  "name": "fvoxlab/swog",
+  "name": "swolab/swog",
   "description": "Solar Web Operator - Graphic Unit Interface",
   "keywords": [
     "css",
@@ -15,8 +15,5 @@
       "email": "dp@agenziasmart.com"
     }
   ],
-  "support": {
-    "issues": "https://github.com/twbs/bootstrap/issues"
-  },
   "license": "MIT"
 }
