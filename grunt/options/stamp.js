@@ -9,7 +9,7 @@ module.exports = {
 	},
 	swog: {
 		options: {
-			banner: '<%= banner %>',
+			banner: '<%= banner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>\n',
 		},
 		files: {
 			src: '<%= concat.swog.dest %>'
