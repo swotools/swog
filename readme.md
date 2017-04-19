@@ -7,7 +7,12 @@
 - grunt
 
 ## Major
-Bootstrap in composer, autoinstall sass, migliorati i comandi grunt
+Task in gruntfile, postcss senza maps. Definiti bene i dest e dist.<br>
+I file saranno:<br>
+bootstrap.css | .min in produzione
+swog.css | .min in produzione
+bootstrap.js | .min in produzione
+swog.js | .min in produzione
 
 
 ## Installing

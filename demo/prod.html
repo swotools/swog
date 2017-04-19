@@ -13,30 +13,29 @@
   <title>Demo Production Template for Bootstrap</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../public/static/css/style.css" rel="stylesheet">
+  <link href="../public/static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../public/static/css/swog.min.css" rel="stylesheet">
 
   <style>
+    body {
+      padding-top: 70px;
+      padding-bottom: 30px;
+    }
 
-  body {
-  padding-top: 70px;
-  padding-bottom: 30px;
-  }
+    .theme-dropdown .dropdown-menu {
+      position: static;
+      display: block;
+      margin-bottom: 20px;
+    }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
-}
+    .theme-showcase>p>.btn {
+      margin: 5px 0;
+    }
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
-}
-
-.theme-showcase .navbar .container {
-  width: auto;
-}
-
-</style>
+    .theme-showcase .navbar .container {
+      width: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -655,7 +654,8 @@
   <script>
     window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
   </script>
-  <script src="../public/static/js/script.js"></script>
+  <script src="../public/static/js/bootstrap.min.js"></script>
+  <script src="../public/static/js/swog.min.js"></script>
 
   <script>
     $(function() {

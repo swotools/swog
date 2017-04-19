@@ -80,6 +80,15 @@ module.exports = function(grunt) {
 		'clean:swogcss',
 		'sass:swog',
 	]);
+	grunt.registerTask('dist-bscss', [
+		'clean:bscss',
+		'sass:bootstrapdist',
+	]);
+	grunt.registerTask('dist-swogcss', [
+		'clean:swogcss',
+		'sass:swogdist',
+	]);
+
 	grunt.registerTask('dev', [
 		'dev-jsbs', 'stamp:bootstrap',
 		'dev-jsswog', 'stamp:swog',
@@ -88,10 +97,14 @@ module.exports = function(grunt) {
 		'exec:postcss'
 	]);
 	grunt.registerTask('dist', [
-		'dev',
+		'dev-jsbs', 'stamp:bootstrap',
+		'dev-jsswog', 'stamp:swog',
+		'dist-bscss',
+		'dist-swogcss',
+		'exec:postcss',
 		'uglify:bootstrap',
 		'uglify:swog',
-		'cssmin:core'
+		//'cssmin:core'
 	]);
 	// Default Task is basically a rebuild
 	grunt.registerTask('default', ['dev']);
