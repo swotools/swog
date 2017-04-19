@@ -17,7 +17,8 @@ module.exports = {
 	},
 	dist: {
 		options: {
-			keepSpecialComments: 0
+			keepSpecialComments: 0,
+			sourceMap: false,
 		},
 		files: {
 			'<%=pkg.distdir%>/css/style.css': ['<%=pkg.distdir%>/css/*.min.css']

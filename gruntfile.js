@@ -56,13 +56,13 @@ module.exports = function(grunt) {
 	// CSS distribution task.
 	// Supported Compilers: sass (Ruby) and libsass.
 	(function(sassCompilerName) {
-		require('./grunt/tasks/sass-compile/' + sassCompilerName + '.js')(grunt);
+		require('./grunt/sass-compile/' + sassCompilerName + '.js')(grunt);
 		grunt.log.writeln('Ciao ' + sassCompilerName);
 
 	})(process.env.SWO_SASS || 'libsass');
 
 	// Load tasks from the tasks folder
-	grunt.loadTasks('./grunt/tasks');
+	//grunt.loadTasks('./grunt/tasks');
 
 	grunt.registerTask('dev-jsbs', [
 		'clean:bsjs',
@@ -79,6 +79,32 @@ module.exports = function(grunt) {
 	grunt.registerTask('dev-swogcss', [
 		'clean:swogcss',
 		'sass:swog',
+	]);
+	grunt.registerTask('dist-bscss', [
+		'clean:bscss',
+		'sass:bootstrapdist',
+	]);
+	grunt.registerTask('dist-swogcss', [
+		'clean:swogcss',
+		'sass:swogdist',
+	]);
+
+	grunt.registerTask('dev', [
+		'dev-jsbs', 'stamp:bootstrap',
+		'dev-jsswog', 'stamp:swog',
+		'dev-bscss',
+		'dev-swogcss',
+		'exec:postcss'
+	]);
+	grunt.registerTask('dist', [
+		'dev-jsbs', 'stamp:bootstrap',
+		'dev-jsswog', 'stamp:swog',
+		'dist-bscss',
+		'dist-swogcss',
+		'exec:postcss',
+		'uglify:bootstrap',
+		'uglify:swog',
+		//'cssmin:core'
 	]);
 	// Default Task is basically a rebuild
 	grunt.registerTask('default', ['dev']);

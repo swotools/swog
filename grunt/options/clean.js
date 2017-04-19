@@ -1,10 +1,10 @@
 module.exports = {
-	dist: {
-		src: [
-			"<%=pkg.distdir%>/css",
-			"<%=pkg.distdir%>/js"
-		]
-	},
+	// dist: {
+	// 	src: [
+	// 		"<%=pkg.distdir%>/css",
+	// 		"<%=pkg.distdir%>/js"
+	// 	]
+	// },
 	swogcss: {
 		src: [
 			"<%=pkg.distdir%>/css/swog*"

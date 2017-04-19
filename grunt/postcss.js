@@ -3,11 +3,12 @@ module.exports = {
 		'postcss-flexbugs-fixes',
 		'autoprefixer'
 	],
-	map: {
-		inline: false,
-		annotation: true,
-		sourcesContent: true
-	},
+	map: false,
+	// map: {
+	// 	inline: false,
+	// 	annotation: false,
+	// 	sourcesContent: false
+	// },
 	autoprefixer: {
 		browsers: [
 			'Chrome >= 20',

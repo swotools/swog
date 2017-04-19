@@ -1,19 +1,4 @@
 module.exports = {
-	pubcss: {
-		files: [{
-			src: ['<%=pkg.distdir%>/css/swog_core.css'],
-			dest: '<%=pkg.devdir%>/css/swog.css'
-		}],
-	},
-	pubjs: {
-		files: [{
-			src: ['<%=pkg.distdir%>/js/swog.min.js'],
-			dest: '<%=pkg.devdir%>/js/swog.js'
-		}, {
-			src: ['<%=pkg.distdir%>/js/bootstrap.min.js'],
-			dest: '<%=pkg.devdir%>/js/bootstrap.js'
-		}],
-	},
 	fonts: {
 		files: [
 			// includes files within path
