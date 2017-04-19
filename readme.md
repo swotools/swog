@@ -1,11 +1,14 @@
-# SWOG / Graphic Framework
-
+# SWOG / Graphic Framework v1.1.0
 - Bootstrap framework v.3.3.7
 - Sass
 - Js
 - Nodejs
 - npm
 - grunt
+
+## Major
+Bootstrap in composer, autoinstall sass, migliorati i comandi grunt
+
 
 ## Installing
 
