@@ -13,5 +13,9 @@ module.exports = {
 	swog: {
 		src: '<%= concat.swog.dest %>',
 		dest: '<%=pkg.distdir%>/js/<%= pkg.name %>.min.js'
+	},
+	dist: {
+		src: ['<%= concat.swog.dest %>', '<%= concat.swog.dest %>'],
+		dest: '<%=pkg.distdir%>/js/<%= pkg.name %>.js'
 	}
 };
