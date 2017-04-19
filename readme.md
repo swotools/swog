@@ -14,6 +14,28 @@ $ npm install
 $ npm update
 ```
 
+#### Includi in composer
+```json
+"repositories": [
+  {
+      "type": "git",
+      "url": "https://github.com/swotools/swog"
+  }
+],
+"require": {
+  "swotools/swog": "^1.0"
+}
+```
+
+#### Aggiungi i comandi script a composer
+I comandi di installazione, manutenzione e aggiornamento di swog sono inclusi in Tools (swotools) richiesto ad ogni installazione di swog.
+```json
+"scripts": {
+  "swog:install": "bash vendor/swotools/tools/bin/swog/install.sh"
+},
+```
+**ATT!!** Ti ricordo che SWOG include anche Tools di default
+
 ## Styling with swo.sass using npm grunt
 
 Task                | Description
@@ -35,6 +57,7 @@ grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 Modifica il file `variables.scss` in `./scss/bs3/bootstrap/`
 
 ### SWOG
+
 
 Gli stili del sito li scrivi in SASS nel file `stile.scss` , le variabili le metti nel file `variabili.scss` ovviamente in SASS
 
@@ -106,8 +129,13 @@ function prova(al) {
 ```code
 div.row>.col-md-5+.col-md-7
 ```
-
 Poi premi tab
+```code
+<div class="row">
+  <div class="col-md-5"></div>
+  <div class="col-md-7"></div>
+</div>
+```
 
 Docs -> <http://docs.emmet.io>
 
