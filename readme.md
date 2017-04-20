@@ -59,7 +59,6 @@ grunt dev-bscss     | Compila i SASS di bootstrap
 grunt dist-bscss    | Esegue il dev-bscss e clean-css
 grunt dev-swogcss   | Compila i SASS di swog
 grunt dist-swogcss  | Esegue il dev-swogcss e clean-css
-
 grunt watch         | Ascolta i task qui sotto
 grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
 grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
