@@ -15,6 +15,44 @@
   <!-- Bootstrap core CSS -->
   <link href="../public/static/css/bootstrap.css" rel="stylesheet">
   <link href="../public/static/css/swog.css" rel="stylesheet">
+  <style>
+    .bd-example-row-flex-cols .row {
+      background-color: rgba(255, 0, 0, 0.1);
+      min-height: 10rem;
+    }
+
+    .bd-example-row .row>.col,
+    .bd-example-row .row>[class^="col-"] {
+      background-color: rgba(86, 61, 124, 0.15);
+      border: 1px solid rgba(86, 61, 124, 0.2);
+      padding-bottom: 0.75rem;
+      padding-top: 0.75rem;
+    }
+    .bd-highlight {
+        background-color: rgba(86, 61, 124, 0.15);
+        border: 1px solid rgba(86, 61, 124, 0.15);
+    }
+    article.scrollspy-example {
+      position: relative;
+      overflow: scroll;
+      width: 350px;
+      height: 160px;
+    }
+
+    .border-utils [class^="border-"] {
+      background-color: #f5f5f5;
+      border: 1px solid;
+      display: inline-block;
+      height: 6rem;
+      margin: 0.25rem;
+      width: 6rem;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -60,46 +98,82 @@
     </div>
   </div>
 
+
   <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+    <h3> Grid <small class="text-muted">con sottotitolo</small></h3>
+    <div class="bd-example-row bd-example-row-flex-cols">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+        </div>
+        <div class="row align-items-center mt-2">
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+        </div>
+        <div class="row align-items-end mt-2">
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+        </div>
       </div>
     </div>
-
     <hr>
-
-    <footer>
-      <p>&copy; Company 2017</p>
-    </footer>
-  </div>
-  <!-- /container -->
-
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-3">SWOG jumbotron</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <div class="bd-example-row bd-example-row-flex-cols">
+      <div class="container">
+        <div class="row">
+          <div class="col align-self-start">
+            One of three columns
+          </div>
+          <div class="col align-self-center">
+            One of three columns
+          </div>
+          <div class="col align-self-end">
+            One of three columns
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <h3>
-  Fancy display heading
-  <small class="text-muted">With faded secondary text</small>
-</h3>
+    <hr>
+    <div class="bd-example-row">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            Level 1: .col-sm-9
+            <div class="row">
+              <div class="col-8 col-sm-6">
+                Level 2: .col-8 .col-sm-6
+              </div>
+              <div class="col-4 col-sm-6">
+                Level 2: .col-4 .col-sm-6
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <h1 class="display-1">Display 1</h1>
     <div class="row">
       <div class="col-md-6">
@@ -245,7 +319,7 @@
     <p>
       <img src="https://placehold.it/200x200" class="img-circle m-x-auto d-block" alt="...">
     </p>
-    <h3 class="display-3">Tables</h3>
+    <h3 class="display-4">Tables</h3>
     <table class="table">
       <thead>
         <tr>
@@ -505,7 +579,8 @@
       <img src="https://placehold.it/200x200" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
       <figcaption class="figure-caption text-right">A caption for the above image.</figcaption>
     </figure>
-    <h5 class="display-1">Alerts</h5>
+
+    <h3 class="display-1">Alerts</h3>
     <div class="alert alert-success" role="alert">
       <strong>Well done!</strong> You successfully read this important alert message.
     </div>
@@ -525,9 +600,38 @@
       <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
       <p class="m-b-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
     </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    </div>
 
+    <h3 class="display-4">Badge</h3>
 
-    <h3 class="display-3">breadcrumb</h3>
+    <div class="row">
+      <div class="col">
+        <h1>Example heading <span class="badge badge-default">New</span></h1>
+        <h2>Example heading <span class="badge badge-default">New</span></h2>
+        <h3>Example heading <span class="badge badge-default">New</span></h3>
+        <h4>Example heading <span class="badge badge-default">New</span></h4>
+        <h5>Example heading <span class="badge badge-default">New</span></h5>
+        <h6>Example heading <span class="badge badge-default">New</span></h6>
+      </div>
+      <div class="col"><span class="badge badge-default">Default</span>
+        <span class="badge badge-primary">Primary</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-info">Info</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-danger">Danger</span></div>
+      <div class="col"><span class="badge badge-pill badge-default">Default</span>
+        <span class="badge badge-pill badge-primary">Primary</span>
+        <span class="badge badge-pill badge-success">Success</span>
+        <span class="badge badge-pill badge-info">Info</span>
+        <span class="badge badge-pill badge-warning">Warning</span>
+        <span class="badge badge-pill badge-danger">Danger</span></div>
+    </div>
+    <h3 class="display-4">breadcrumb</h3>
     <ol class="breadcrumb">
       <li class="breadcrumb-item active">Home</li>
     </ol>
@@ -550,18 +654,47 @@
     </nav>
 
     <h3 class="display-4">Buttons</h3>
-    <button class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+      </div>
+      <div class="col">
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <button type="button" class="btn btn-primary">Primary</button>
 
-    <a href="#" class="btn btn-primary" role="button">LInk</a>
+        <!-- Secondary, outline button -->
+        <button type="button" class="btn btn-secondary">Secondary</button>
 
-    <button type="button" class="btn btn-outline-primary">Primary</button>
-    <button type="button" class="btn btn-outline-secondary">Secondary</button>
-    <button type="button" class="btn btn-outline-success">Success</button>
-    <button type="button" class="btn btn-outline-info">Info</button>
-    <button type="button" class="btn btn-outline-warning">Warning</button>
-    <button type="button" class="btn btn-outline-danger">Danger</button>
+        <!-- Indicates a successful or positive action -->
+        <button type="button" class="btn btn-success">Success</button>
 
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-info">Info</button>
+
+        <!-- Indicates caution should be taken with this action -->
+        <button type="button" class="btn btn-warning">Warning</button>
+
+        <!-- Indicates a dangerous or potentially negative action -->
+        <button type="button" class="btn btn-danger">Danger</button>
+
+        <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+
+        <a href="#" class="btn btn-primary" role="button">LInk</a>
+
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="btn btn-outline-info">Info</button>
+        <button type="button" class="btn btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-outline-danger">Danger</button>
+      </div>
+    </div>
     <hr>
     <button type="button" class="btn btn-primary btn-lg">largo</button>
     <div class="btn-group" data-toggle="buttons">
@@ -593,7 +726,7 @@
 
     <h3 class="display-2">Cards</h3>
     <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" src="https://placehold.it/300x100" alt="Card image cap">
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -634,7 +767,7 @@
     </div>
 
     <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" src="https://placehold.it/300x100" alt="Card image cap">
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -650,55 +783,61 @@
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3 class="card-header">Featured</h3>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-
-    <div class="card">
-      <div class="card-header">
-        Quote
-      </div>
-      <div class="card-block">
-        <blockquote class="card-blockquote">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-      </div>
-    </div>
-
-    <div class="card text-center">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
-    </div>
 
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h3 class="card-header">Featured</h3>
+          <div class="card-block">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Quote
+          </div>
+          <div class="card-block">
+            <blockquote class="card-blockquote">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <div class="card text-center">
+          <div class="card-header">
+            Featured uno
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+      </div>
+      <div class="col">
         <div class="card">
           <div class="card-block">
             <h3 class="card-title">Special title treatment</h3>
@@ -707,18 +846,9 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <div class="card w-75">
+    <div class="card w-75 mb-2">
       <div class="card-block">
         <h3 class="card-title">Card title</h3>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -726,7 +856,7 @@
       </div>
     </div>
 
-    <div class="card w-50">
+    <div class="card w-50 mb-2">
       <div class="card-block">
         <h3 class="card-title">Card title</h3>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -734,13 +864,6 @@
       </div>
     </div>
 
-    <div class="card" style="width: 20rem;">
-      <div class="card-block">
-        <h3 class="card-title">Special title treatment</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
 
     <div class="row">
       <div class="col-md-4">
@@ -771,7 +894,9 @@
         </div>
       </div>
     </div>
-    <div class="card text-center">
+
+
+    <div class="card text-center my-3">
       <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
           <li class="nav-item">
@@ -792,7 +917,7 @@
       </div>
     </div>
 
-    <div class="card text-center">
+    <div class="card text-center my-3">
       <div class="card-header">
         <ul class="nav nav-pills card-header-pills">
           <li class="nav-item">
@@ -812,154 +937,130 @@
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-    <div class="card  card-block">
-      <img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-
-    <div class="card" style="max-width: 20rem;">
-      <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs pull-xs-left">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Ugg</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Moccasins</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Go Go</a>
-          </li>
-        </ul>
-      </div>
-      <div class="card-block">
-        <h4 class="card-title">Ugg Boots</h4>
-        <p class="card-text">Best ugg boots on the planet. Free shipping, 24/7 customer service.</p>
-      </div>
-      <div class="card-footer">
-        By Uuuuggghhh.com
-      </div>
-    </div>
-
-
-    <div class="card" style="max-width: 20rem;">
-      <img class="card-img-top" src="https://placehold.it/350x300" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-block">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
 
     <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-
-          <!-- Image -->
-          <img class="card-img-top" src="https://placehold.it/200x200" alt="Photo of sunset">
-
-          <!-- Text Content -->
+      <div class="col">
+        <div class="card  card-block">
+          <img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
           <div class="card-block">
-            <p class="card-text">Well it was good while it lasted...</p>
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
-
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-
-          <!-- Image -->
-          <img class="card-img-top" src="https://placehold.it/200x200" alt="Photo of sunset">
-
-          <!-- Text Content -->
-          <div class="card-block">
-            <p class="card-text">Well it was good while it lasted...</p>
-          </div>
-
         </div>
 
       </div>
-      <div class="col-md-4">
-        <div class="card">
-
-          <!-- Image -->
-          <img class="card-img-top" src="https://placehold.it/200x200" alt="Photo of sunset">
-
-          <!-- Text Content -->
-          <div class="card-block">
-            <p class="card-text">Well it was good while it lasted...</p>
+      <div class="col">
+        <div class="card" style="max-width: 20rem;">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs pull-xs-left">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Ugg</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Moccasins</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Go Go</a>
+              </li>
+            </ul>
           </div>
-
+          <div class="card-block">
+            <h4 class="card-title">Ugg Boots</h4>
+            <p class="card-text">Best ugg boots on the planet. Free shipping, 24/7 customer service.</p>
+          </div>
+          <div class="card-footer">
+            By Uuuuggghhh.com
+          </div>
         </div>
-
+      </div>
+      <div class="col">
+        <div class="card" style="max-width: 20rem;">
+          <img class="card-img-top" src="https://placehold.it/350x300" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+          <div class="card-block">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+    <div class="row my-3">
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="https://placehold.it/200x200" alt="Photo of sunset">
+          <div class="card-block">
+            <p class="card-text">Well it was good while it lasted...</p>
+          </div>
+        </div>
       </div>
-      <img src="https://placehold.it/350x300" alt="Card image">
-      <div class="card-block">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="https://placehold.it/200x200" alt="Photo of sunset">
+          <div class="card-block">
+            <p class="card-text">Well it was good while it lasted...</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="https://placehold.it/200x200" alt="Photo of sunset">
+          <div class="card-block">
+            <p class="card-text">Well it was good while it lasted...</p>
+          </div>
+        </div>
       </div>
     </div>
 
-
-    <div class="row">
-      <div class="col-sm-6">
+    <div class="row my-3">
+      <div class="col">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+          </div>
+          <img src="https://placehold.it/350x300" alt="Card image">
+          <div class="card-block">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
         <div class="card card-block">
           <h3 class="card-title">Special title treatment</h3>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="card card-block">
-          <h3 class="card-title">Special title treatment</h3>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card card-block text-xs-right">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="col">
+        <div class="card text-xs-center">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="card text-xs-center">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
-    </div>
-
-    <div class="card card-outline-success text-xs-center">
+    <div class="card card-outline-success text-xs-center my-3">
       <div class="card-block">
         <blockquote class="card-blockquote">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -969,33 +1070,26 @@
     </div>
 
     <div class="card card-inverse text-center" style="max-width: 202px;">
-
-      <!-- Image -->
       <img class="card-img-top" src="http://1079638729.rsc.cdn77.org/pic/v2/gallery/preview/more-pejzazh-solnce-zakat-20564.jpg" alt="Photo of sunset" style="max-width:202px;">
-
-      <!-- Text Overlay -->
       <div class="card-img-overlay">
         <h4 class="card-title">What Next?</h4>
         <p class="card-text">Is this the end?</p>
       </div>
-
       <div class="card-block">
         Tune in next week to find out!
       </div>
-
     </div>
 
-    <hr>
-    <button type="button" class="btn btn-primary" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Now click somewhere else">
-      Click me
-    </button>
-    <button type="button" class="btn btn-primary" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Now hover out.">
-  Hover over me
-</button>
+    <div class="card card-inverse my-3">
+      <img class="card-img" src="https://placehold.it/769x270" alt="Card image">
+      <div class="card-img-overlay">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
 
-    <hr>
-
-    <div class="card-group">
+    <div class="card-group my-3">
       <div class="card">
         <img class="card-img-top" src="https://placehold.it/300x200" alt="Card image cap">
         <div class="card-block">
@@ -1021,76 +1115,82 @@
         </div>
       </div>
     </div>
-
-
-    <hr>
-    <style scoped="true">
-      article.scrollspy-example {
-        position: relative;
-        overflow: scroll;
-        width: 350px;
-        height: 160px;
-      }
-    </style>
-
-    <nav id="scrollspy-nav" class="navbar navbar-default">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a class="nav-link" href="#bast">Bast</a></li>
-        <li class="nav-item"><a class="nav-link" href="#brogan">Brogan</a></li>
-        <li class="nav-item"><a class="nav-link" href="#calceology">Calceology</a></li>
-      </ul>
-    </nav>
-    <article data-spy="scroll" data-target="#scrollspy-nav" data-offset="0" class="scrollspy-example">
-      <h4 id="bast">Bast Shoes</h4>
-      <p>Bast shoes are shoes made primarily from bast (fiber from the bark of the linden tree or birch tree). They are a kind of basket, woven and fitted to the shape of a foot. Bast shoes are an obsolete traditional footwear of the forest areas of Northern
-        Europe, formerly worn by poorer members of the Finnic peoples, Balts, and East Slavs. They were easy to manufacture, but not durable.</p>
-      <h4 id="brogan">Brogan</h4>
-      <p>Brogan-like shoes, called "brogues", were made and worn in Scotland and Ireland as early as the 16th century, and the shoe-type probably originated there.</p>
-      <h4 id="calceology">Calceology</h4>
-      <p>Calceology is the study of footwear, especially historical footwear whether as archaeology, shoe fashion history, or otherwise.</p>
-      <p>Calceology comprises the examination, registration, research and conservation of leather shoe fragments.</p>
-      <p>However, calceology is not yet formally recognized as a field of research. </p>
-    </article>
-    <hr>
-    <div class="card-deck-wrapper">
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="https://placehold.it/242x200" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+    <h1 class="display-4">Card group e card deck</h1>
+    <div class="card-group my-3">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/300x300" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="https://placehold.it/242x200" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="https://placehold.it/242x200" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/300x300" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/300x300" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
         </div>
       </div>
     </div>
-    <hr>
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/300x300" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/300x300" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/300x300" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <h3 class="display-4">Card column</h3>
     <div class="card-columns">
       <div class="card">
-        <img class="card-img-top" src="https://placehold.it/242x160" alt="Card image cap">
+        <img class="card-img-top img-fluid" src="https://placehold.it/500x200" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title">Card title that wraps to a new line</h4>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
       </div>
-      <div class="card card-block">
-        <blockquote class="card-blockquote">
+      <div class="card p-3">
+        <blockquote class="card-block card-blockquote">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
           <footer>
             <small class="text-muted">
@@ -1100,14 +1200,14 @@
         </blockquote>
       </div>
       <div class="card">
-        <img class="card-img-top" src="https://placehold.it/242x160" alt="Card image cap">
+        <img class="card-img-top img-fluid" src="https://placehold.it/500x200" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title">Card title</h4>
           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
-      <div class="card card-block card-inverse card-primary text-xs-center">
+      <div class="card card-inverse card-primary p-3 text-center">
         <blockquote class="card-blockquote">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
           <footer>
@@ -1117,15 +1217,17 @@
           </footer>
         </blockquote>
       </div>
-      <div class="card card-block text-xs-center">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <div class="card text-center">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
       </div>
       <div class="card">
-        <img class="card-img" src="https://placehold.it/242x160" alt="Card image">
+        <img class="card-img img-fluid" src="https://placehold.it/500x200" alt="Card image">
       </div>
-      <div class="card card-block text-xs-right">
+      <div class="card p-3 text-right">
         <blockquote class="card-blockquote">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
           <footer>
@@ -1135,445 +1237,356 @@
           </footer>
         </blockquote>
       </div>
-      <div class="card card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    <hr>
-
-    <section id="customForms">
-      <h2>Introducing Custom Forms</h2>
-      <div class="form-group row">
-        <label for="example-text-input" class="col-xs-2 col-form-label">Text</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
-      <div class="form-group row">
-        <label for="example-search-input" class="col-xs-2 col-form-label">Search</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-url-input" class="col-xs-2 col-form-label">URL</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="url" value="http://getbootstrap.com" id="example-url-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="password" value="hunter2" id="example-password-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-number-input" class="col-xs-2 col-form-label">Number</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="number" value="42" id="example-number-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Date and time</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-month-input" class="col-xs-2 col-form-label">Month</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="month" value="2011-08" id="example-month-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-week-input" class="col-xs-2 col-form-label">Week</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-time-input" class="col-xs-2 col-form-label">Time</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-color-input" class="col-xs-2 col-form-label">Color</label>
-        <div class="col-xs-10">
-          <input class="form-control" type="color" value="#563d7c" id="example-color-input">
-        </div>
-      </div>
-      <hr>
-      <form class="form-inline">
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-          <div class="input-group">
-            <div class="input-group-addon">$</div>
-            <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
-            <div class="input-group-addon">.00</div>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Transfer cash</button>
-      </form>
-
-      <div class="container">
-        <form>
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            </div>
-          </div>
-          <fieldset class="form-group row">
-            <legend class="col-form-legend col-sm-2">Radios</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  Option one is this and that&mdash;be sure to include why it's great
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  Option two can be something else and selecting it will deselect option one
-                </label>
-              </div>
-              <div class="form-check disabled">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                  Option three is disabled
-                </label>
-              </div>
-            </div>
-          </fieldset>
-          <div class="form-group row">
-            <label class="col-sm-2">Checkbox</label>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox"> Check me out
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="offset-sm-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <hr>
-      <form class="form-inline">
-        <div class="form-group">
-          <label for="inputPassword4">Password</label>
-          <input type="password" id="inputPassword4" class="form-control" aria-describedby="passwordHelpInline">
-          <small id="passwordHelpInline" class="text-muted">
-            Must be 8-20 characters long.
-</small>
-        </div>
-        <div class="form-group">
-          <label class="custom-file">
-  <input type="file" id="file" class="custom-file-input">
-  <span class="custom-file-control"></span>
-</label>
-        </div>
-      </form>
-    </section>
-    <h4 class="display-3">Input group</h4>
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-    </div>
-    <br>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-      <span class="input-group-addon" id="basic-addon2">@example.com</span>
-    </div>
-    <br>
-    <label for="basic-url">Your vanity URL</label>
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
-    <br>
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-      <span class="input-group-addon">.00</span>
-    </div>
-    <br>
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <span class="input-group-addon">0.00</span>
-      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Action
-        </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div role="separator" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </div>
-          <input type="text" class="form-control" aria-label="Text input with dropdown button">
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input type="text" class="form-control" aria-label="Text input with dropdown button">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Action
-        </button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div role="separator" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="jumbotron">
-      <h1 class="display-3">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="m-y-2">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </p>
     </div>
 
-    <h3 class="display-3">Collapse</h3>
-    <p>
-      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Link with href
+    <h3 class="display-4">Popover</h3>
+    <button type="button" class="btn btn-primary" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Now click somewhere else">
+      Click me
+    </button>
+    <button type="button" class="btn btn-primary" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Now hover out.">
+  Hover over me
+</button>
+
+    <h3 class="display-4">Carousel</h3>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img class="d-block img-fluid" src="https://placehold.it/1280x400" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="https://placehold.it/1280x400" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="https://placehold.it/1280x400" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
       </a>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Button with data-target
-      </button>
-    </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-block">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
-    <div class="btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    This dropdown's menu is right-aligned
-  </button>
-      <div class="dropdown-menu dropdown-menu-right">
-        <button class="dropdown-item" type="button">Action</button>
-        <button class="dropdown-item" type="button">Another action</button>
-        <button class="dropdown-item" type="button">Something else here</button>
-      </div>
-    </div>
-    <!-- Default dropup button -->
-    <div class="btn-group dropup">
-      <button type="button" class="btn btn-secondary">Dropup</button>
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-      <div class="dropdown-menu">
-        <!-- Dropdown menu links -->
-      </div>
-    </div>
-
-    <!-- Split dropup button -->
-    <div class="btn-group dropup">
-      <button type="button" class="btn btn-secondary">
-    Split dropup
-  </button>
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-      <div class="dropdown-menu">
-        <!-- Dropdown menu links -->
-      </div>
-    </div>
-    <!-- Example split danger button -->
-    <div class="btn-group">
-      <button type="button" class="btn btn-danger">Action</button>
-      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </div>
-    <h3 class="display-3">List group</h3>
-    <div class="list-group">
-      <a href="#" class="list-group-item active">
-        Cras justo odio
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
       </a>
-      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-      <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-      <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
     </div>
-    <h3 class="display-3">il mitico modal</h3>
-    <button type="button" data-target="#myModal" data-toggle="modal" class="btn btn-primary btn-lg">avvia modal</button>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <h3 class="display-4">List group</h3>
+    <div class="row my-3">
+      <div class="col">
+        <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="list-group">
+          <a href="#" class="list-group-item active">
+    Cras justo odio
+  </a>
+          <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+          <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <ul class="list-group">
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+          <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+          <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+          <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-group">
+          <li class="list-group-item justify-content-between">
+            Cras justo odio
+            <span class="badge badge-default badge-pill">14</span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Dapibus ac facilisis in
+            <span class="badge badge-default badge-pill">2</span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Morbi leo risus
+            <span class="badge badge-default badge-pill">1</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small>3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small>Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+          </a>
+        </div>
+      </div>
+    </div>
+    <h3 class="display-4">Modal</h3>
+    <div class="modal fade">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <span aria-hidden="true">&times;</span>
+          </button>
           </div>
           <div class="modal-body">
-            testo lorem ipsum sit amet testo lorem ipsum sit amet testo lorem ipsum sit amet testo lorem ipsum sit amet testo lorem ipsum sit amet
+            <p>Modal body text goes here.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-    <h3 class="display-3">navs</h3>
-    <nav class="nav nav-inline">
-      <a class="nav-link active" href="#">Active</a>
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link disabled" href="#">Disabled</a>
+    <h3 class="display-4">Navs</h3>
+    <ul class="nav my-3">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <ul class="nav justify-content-center my-3">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <div class="row my-3">
+      <div class="col">
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Longer nav link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Longer nav link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav class="nav nav-pills flex-column flex-sm-row my-3">
+      <a class="flex-sm-fill text-sm-center nav-link active" href="#">Active</a>
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
+      <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">Disabled</a>
     </nav>
-    <h3 class="display-3">Mitica navbar</h3>
-    <nav class="navbar navbar-light bg-faded">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <ul class="nav navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-      <form class="form-inline pull-xs-right">
-        <input class="form-control" type="text" placeholder="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </nav>
-    <hr>
-    <h4>qui è per versione mobile</h4>
-    <nav class="navbar navbar-light bg-faded">
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
-          &#9776;
-        </button>
-      <div class="collapse navbar-toggleable-xs" id="navbar-header">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <ul class="nav navbar-nav">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <h3 class="display-4">Navbar</h3>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-top my-3">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <a class="navbar-brand" href="#">
+        <img src="http://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">Bootstrap</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link disabled" href="#">Disabled</a>
           </li>
         </ul>
-        <form class="form-inline pull-xs-right">
-          <input class="form-control" type="text" placeholder="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <span class="navbar-text">Wow!</span>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
-    <!-- /navbar -->
-    <hr>
-    <nav class="navbar navbar-light bg-faded">
-      <div class="nav navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Features</a>
-        <a class="nav-item nav-link" href="#">Pricing</a>
-        <a class="nav-item nav-link" href="#">About</a>
+    <h5 class="display-5">External</h5>
+    <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-inverse p-4">
+          <h4 class="text-white">Collapsed content</h4>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
       </div>
-    </nav>
-    <hr>
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <div class="nav navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Features</a>
-        <a class="nav-item nav-link" href="#">Pricing</a>
-        <a class="nav-item nav-link" href="#">About</a>
+      <nav class="navbar navbar-inverse bg-inverse">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      </nav>
+    </div>
+    <h3 class="display-4">Pagination</h3>
+    <div class="row">
+      <div class="col">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
       </div>
-    </nav>
-    <h3 class="display-3">Tags</h3>
-    <h1>Example heading <span class="tag tag-default">New</span></h1>
-    <h2>Example heading <span class="tag tag-default">New</span></h2>
-    <h3>Example heading <span class="tag tag-default">New</span></h3>
-    <h4>Example heading <span class="tag tag-default">New</span></h4>
-    <h5>Example heading <span class="tag tag-default">New</span></h5>
-    <h6>Example heading <span class="tag tag-default">New</span></h6>
-    <hr>
-    <span class="tag tag-default">Default</span>
-    <span class="tag tag-primary">Primary</span>
-    <span class="tag tag-success">Success</span>
-    <span class="tag tag-info">Info</span>
-    <span class="tag tag-warning">Warning</span>
-    <span class="tag tag-danger">Danger</span>
-    <hr>
-    <span class="tag tag-pill tag-default">Default</span>
-    <span class="tag tag-pill tag-primary">Primary</span>
-    <span class="tag tag-pill tag-success">Success</span>
-    <span class="tag tag-pill tag-info">Info</span>
-    <span class="tag tag-pill tag-warning">Warning</span>
-    <span class="tag tag-pill tag-danger">Danger</span>
-    <h3 class="display-3">tooltip</h3>
+      <div class="col">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <h3 class="display-4">Popover</h3>
+    <div class="row my-2">
+      <div class="col">
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top</button>
+
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on right</button>
+
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on bottom
+</button>
+
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on left
+</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+      </div>
+      <div class="col">
+        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+      </div>
+    </div>
+    <h3 class="display-4">Progess</h3>
+    <div class="progress mb-2">
+      <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress mb-2">
+      <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+    </div>
+    <div class="progress mb-2">
+      <div class="progress-bar" role="progressbar" style="width: 25%; height: 1px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress mb-2">
+      <div class="progress-bar" role="progressbar" style="width: 25%; height: 20px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <h3 class="display-4">Tooltip</h3>
     <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
   Tooltip on top
 </button>
@@ -1586,78 +1599,180 @@
     <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
   Tooltip on left
 </button>
-    <h3 class="display-3">utility</h3>
-    <div class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
-    <p><a href="#" class="text-muted">Muted link</a>
+    <h3 class="display-3">Utilities</h3>
+    <div class="my-3">
+      <img src="https://placehold.it/75x75" alt="..." class="rounded">
+      <img src="https://placehold.it/75x75" alt="..." class="rounded-top">
+      <img src="https://placehold.it/75x75" alt="..." class="rounded-right">
+      <img src="https://placehold.it/75x75" alt="..." class="rounded-bottom">
+      <img src="https://placehold.it/75x75" alt="..." class="rounded-left">
+      <img src="https://placehold.it/75x75" alt="..." class="rounded-circle">
+      <img src="https://placehold.it/75x75" alt="..." class="rounded-0">
+    </div>
+    <div class="border-utils">
+      <span class="border-0"></span>
+      <span class="border-top-0"></span>
+      <span class="border-right-0"></span>
+      <span class="border-bottom-0"></span>
+      <span class="border-left-0"></span>
+    </div>
+
+
+    <div class="bg-info clearfix my-3">
+      <button class="btn btn-secondary float-left">Example Button floated left</button>
+      <button class="btn btn-secondary float-right">Example Button floated right</button>
+    </div>
+    <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+    <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+    <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+    <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p class="text-white">Etiam porta sem malesuada ultricies vehicula.</p>
+    <p>
+      <a href="#" class="text-muted">Muted link</a>
       <a href="#" class="text-primary">Primary link</a>
       <a href="#" class="text-success">Success link</a>
       <a href="#" class="text-info">Info link</a>
       <a href="#" class="text-warning">Warning link</a>
-      <a href="#" class="text-danger">Danger link</a></p>
-    <img class="w-100" src="https://placehold.it/500x100" alt="Width = 100%">
-    <hr>
-    <div class="d-inline bg-success">Inline</div>
-    <div class="d-inline bg-success">Inline</div>
+      <a href="#" class="text-danger">Danger link</a>
+    </p>
+    <div class="mb-2 bg-primary text-white">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+    <div class="mb-2 bg-success text-white">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+    <div class="mb-2 bg-info text-white">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+    <div class="mb-2 bg-warning text-white">Etiam porta sem malesuada magna mollis euismod.</div>
+    <div class="mb-2 bg-danger text-white">Donec ullamcorper nulla non metus auctor fringilla.</div>
+    <div class="mb-2 bg-inverse text-white">Cras mattis consectetur purus sit amet fermentum.</div>
+    <div class="mb-2 bg-faded">Cras mattis consectetur purus sit amet fermentum.</div>
+    <h3 class="diplay-4">Flex</h3>
+    <div class="d-flex p-2">I'm a flexbox container!</div>
+    <div class="d-inline-flex p-2">I'm an inline flexbox container!</div>
+    <div class="d-inline-flex p-2">I'm secondo an inline flexbox container!</div>
 
-    <span class="d-block bg-primary">Block</span>
+<div class="d-flex flex-row bd-highlight mb-3">
+  <div class="p-2 bd-highlight">Flex item 1</div>
+  <div class="p-2 bd-highlight">Flex item 2</div>
+  <div class="p-2 bd-highlight">Flex item 3</div>
+</div>
+<div class="d-flex flex-row-reverse bd-highlight">
+  <div class="p-2 bd-highlight">Flex item 1</div>
+  <div class="p-2 bd-highlight">Flex item 2</div>
+  <div class="p-2 bd-highlight">Flex item 3</div>
+</div>
 
-    <div class="d-inline-block bg-warning">
-      <h3>inline-block</h3> Boot that strap!
-    </div>
-    <div class="d-inline-block bg-warning">
-      <h3>inline-block</h3> Strap that boot!
-    </div>
-    <hr>
-    <div class="pull-xs-left">Float left on all viewport sizes</div><br>
-    <div class="pull-xs-right">Float right on all viewport sizes</div><br>
-    <div class="pull-xs-none">Don't float on all viewport sizes</div><br>
-    <hr>
-    <h1 class="text-hide">Custom heading</h1>
-    <p>Qui sopra il testo non compare. Serve se hai un background nel tag e non carica</p>
-    <hr>
+<div class="d-flex flex-column bd-highlight mb-3">
+  <div class="p-2 bd-highlight">Flex item 1</div>
+  <div class="p-2 bd-highlight">Flex item 2</div>
+  <div class="p-2 bd-highlight">Flex item 3</div>
+</div>
+<div class="d-flex flex-column-reverse bd-highlight">
+  <div class="p-2 bd-highlight">Flex item 1</div>
+  <div class="p-2 bd-highlight">Flex item 2</div>
+  <div class="p-2 bd-highlight">Flex item 3</div>
+</div>
+<h3 class="display-4">Dispaly</h3>
+<div class="d-inline bg-success">Inline</div>
+<div class="d-inline bg-success">Inline</div>
+<span class="d-block bg-primary">Block</span>
+<div class="d-inline-block bg-warning">
+  <h3>inline-block</h3>
+  Boot that strap!
+</div>
+<div class="d-inline-block bg-warning">
+  <h3>inline-block</h3>
+  Strap that boot!
+</div>
+<h3 class="display-4">Responsive helper</h3>
+<div class="row">
+  <div class="col">
     <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-    </div>
-    <!-- 21:9 aspect ratio -->
-    <div class="embed-responsive embed-responsive-21by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
-    </div>
-
-    <!-- 16:9 aspect ratio -->
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
-    </div>
-
-    <!-- 4:3 aspect ratio -->
-    <div class="embed-responsive embed-responsive-4by3">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
-    </div>
-
-    <!-- 1:1 aspect ratio -->
-    <div class="embed-responsive embed-responsive-1by1">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+      <iframe class="my-3 embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
     </div>
   </div>
-  <!-- /container -->
+  <div class="col">
+    <!-- 21:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-21by9">
+      <iframe class="my-3 embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+    </div>
+  </div>
+  <div class="col">
+    <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="my-3 embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+    </div>
+  </div>
+  <div class="col">
+    <!-- 4:3 aspect ratio -->
+    <div class="embed-responsive embed-responsive-4by3">
+      <iframe class="my-3 embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+    </div>
+  </div>
+  <div class="col">
+    <!-- 1:1 aspect ratio -->
+    <div class="embed-responsive embed-responsive-1by1">
+      <iframe class="my-3 embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+    </div>
+  </div>
+</div>
 
 
-  <!-- Bootstrap core JavaScript
+<div class="float-sm-left">Float left on viewports sized SM (small) or wider</div><br>
+<div class="float-md-left">Float left on viewports sized MD (medium) or wider</div><br>
+<div class="float-lg-left">Float left on viewports sized LG (large) or wider</div><br>
+<div class="float-xl-left">Float left on viewports sized XL (extra-large) or wider</div><br>
+
+<h3 class="display-4">Sizing</h3>
+<div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
+<div class="w-50 p-3" style="background-color: #eee;">Width 50%</div>
+<div class="w-75 p-3" style="background-color: #eee;">Width 75%</div>
+<div class="w-100 p-3" style="background-color: #eee;">Width 100%</div>
+
+<div style="height: 100px; background-color: rgba(255,0,0,0.1);" class="my-3">
+  <div class="h-25 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%</div>
+  <div class="h-50 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%</div>
+  <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%</div>
+  <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%</div>
+</div>
+
+<img class="mw-100 my-3" src="https://placehold.it/771x100" alt="Max-width 100%">
+<div style="height: 100px; background-color: rgba(255,0,0,0.1);" class="my-3">
+  <div class="mh-100" style="width: 100px; height: 200px; background-color: rgba(0,0,255,0.1);">Max-height 100%</div>
+</div>
+
+<h3 class="display-4">Typo</h3>
+<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">CapiTaliZed text.</p>
+<p class="font-weight-bold">Bold text.</p>
+<p class="font-weight-normal">Normal weight text.</p>
+<p class="font-italic">Italic text.</p>
+    <footer>
+      <div class="container">
+        <p>&copy; Company 2017</p>
+      </div>
+
+    </footer>
+    <!-- Bootstrap core JavaScript
     ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
-  <script>
-    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-  <script src="../public/static/js/bootstrap.js"></script>
-  <script src="../public/static/js/swog.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-  <script>
-    $(function() {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script>
+      window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="../public/static/js/bootstrap.js"></script>
+    <script src="../public/static/js/swog.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+        $('.popover-dismiss').popover({
+          trigger: 'focus'
+        })
+      });
+    </script>
 </body>
 
 </html>
