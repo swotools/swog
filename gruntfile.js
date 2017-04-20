@@ -146,29 +146,18 @@ module.exports = function(grunt) {
         dest: '<%=pkg.distdir%>/js/<%= pkg.name %>.js'
       }
     },
-    // CSS build configuration
-    copy: {
-      docs: {
-        expand: true,
-        cwd: 'dist/',
-        src: [
-          '**/*'
-        ],
-        dest: 'docs/dist/'
-      }
-    },
     watch: {
-      src: {
-        files: '<%= concat.bootstrap.src %>',
-        tasks: ['babel:dev']
+      bscss: {
+        files: 'scss/bs4/**/*.scss',
+        tasks: ['dev-bscss']
       },
-      sass: {
-        files: 'scss/**/*.scss',
-        tasks: ['dist-css', 'docs']
+      swogcss: {
+        files: 'scss/swog/**/*.scss',
+        tasks: ['dev-swogcss']
       },
-      docs: {
-        files: 'docs/assets/scss/**/*.scss',
-        tasks: ['dist-css', 'docs']
+      swogjs: {
+        files: '<%= concat.swog.src %>',
+        tasks: ['dev-jsswog']
       }
     },
     exec: {
@@ -206,7 +195,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('dev-jsbs', [
-    //'clean:bsjs',
+    'clean:bsjs',
     'babel:dev',
     'concat:bootstrap',
     'babel:dist',
@@ -218,7 +207,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('dev-jsswog', [
-    //'clean:swogjs',
+    'clean:swogjs',
     //'babel:dev',
     'concat:swog',
     //'babel:dist',
@@ -230,7 +219,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('dev-bscss', [
-    //'clean:bscss',
+    'clean:bscss',
     'exec:sass_bs',
     'exec:postcss-bs'
   ]);
@@ -240,7 +229,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('dev-swogcss', [
-    //'clean:swogcss',
+    'clean:swogcss',
     'exec:sass_swog',
     'exec:postcss-swog'
   ]);
@@ -250,14 +239,14 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('dev', [
-    'clean:dist',
+    //'clean:dist',
     'dev-swogcss',
     'dev-bscss',
     'dev-jsswog',
     'dev-jsbs'
   ]);
   grunt.registerTask('dist', [
-    'clean:dist',
+    //'clean:dist',
     'dist-swogcss',
     'dist-bscss',
     'dist-jsswog',
