@@ -1,7 +1,7 @@
 {
   "name": "swog",
   "description": "SWOG Bootstrap Alpha4.6",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "homepage": "http://www.agenziasmart.com",
   "author": "The SWO Team (http://agenziasmart.com/swo)",
   "license": "UNLICENSED",
@@ -14,10 +14,6 @@
     "contributors": [
       "Twitter, Inc."
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://.git"
   },
   "scripts": {
     "eslint": "eslint --config js/.eslintrc.json js/bs4 js/swog",
