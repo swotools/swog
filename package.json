@@ -9,7 +9,7 @@
   "framework": {
     "name": "bootstrap",
     "version": "4.0.0-alpha.6",
-    "homepage": "http://getbootstrap.com",
+    "homepage": "https://getbootstrap.com",
     "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
     "contributors": [
       "Twitter, Inc."
