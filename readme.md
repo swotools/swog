@@ -158,5 +158,8 @@ Docs -> <http://docs.emmet.io>
 Compilato il dist, trovi i file map in public/static.
 Creare upload S3 python dei file bootstrap.min e swog.min in CDN
 
+## Manutenzione verso la RC1 da alpha4
+git fetch su bootstrap, carica js e scss in swog e controlla (meld) differenze di gruntfile
+
 ## Note
 Versione alpha4 di bootstrap ...
