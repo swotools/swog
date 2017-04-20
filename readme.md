@@ -1,4 +1,5 @@
-# SWOG / Graphic Framework v1.1.0
+# SWOG / Graphic Framework v2.1.0
+
 - Bootstrap framework v.3.3.7
 - Sass
 - Js
@@ -7,13 +8,12 @@
 - grunt
 
 ## Major
-Task in gruntfile, postcss senza maps. Definiti bene i dest e dist.<br>
 I file saranno:<br>
 bootstrap.css | .min in produzione
 swog.css | .min in produzione
 bootstrap.js | .min in produzione
 swog.js | .min in produzione
-
+@todo
 
 ## Installing
 
@@ -48,11 +48,18 @@ I comandi di installazione, manutenzione e aggiornamento di swog sono inclusi in
 
 Task                | Description
 :------------------ | :-------------------------------------
-grunt               | Compila tutti task dev-** (qui sotto)
-grunt dev-jsbs      | Compila js bootstrap
-grunt dev-jsswog    | Compila js swog
+dev                 | Compila i dev
+dist                | Compila i dist
+grunt               | (default) Compila dev
+grunt dev-jsbs      | Compila babel bootstrap
+grunt dist-jsbs     | Esegue dev-jsbs e uglify
+grunt dev-jsswog    | Concatena swog
+grunt dist-jsswog   | Esegue dev-jsswog e uglify
 grunt dev-bscss     | Compila i SASS di bootstrap
+grunt dist-bscss    | Esegue il dev-bscss e clean-css
 grunt dev-swogcss   | Compila i SASS di swog
+grunt dist-swogcss  | Esegue il dev-swogcss e clean-css
+
 grunt watch         | Ascolta i task qui sotto
 grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
 grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
@@ -149,16 +156,8 @@ Docs -> <http://docs.emmet.io>
 
 ## ToDO
 
--- scss lint da terminale, jscs, eslint
+Compilato il dist, trovi i file map in public/static.
+Creare upload S3 python dei file bootstrap.min e swog.min in CDN
 
 ## Note
-
-Quando importi da TWBS SASS, rinomina i file
-* _bootstrap.scss
-* _bootstrap-sprockets.scss
-* _bootstrap-mincer.scss
-* _bootstrap-compass.scss
-
-SENZA UNDERSCORE!
-
-"glob": "~4.3.1", - serve per includere i task first cm 5-8-16
+Versione alpha4 di bootstrap ...
