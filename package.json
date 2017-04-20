@@ -21,7 +21,8 @@
   },
   "scripts": {
     "eslint": "eslint --config js/.eslintrc.json js/bs4 js/swog",
-    "postcss": "postcss --config grunt/postcss.js --replace public/static/css/*.css",
+    "postcss-bs": "postcss --config scss/postcss.js --replace public/static/css/bootstrap.css",
+    "postcss-swog": "postcss --config scss/postcss.js --replace public/static/css/swog.css",
     "test": "npm run eslint && npm run jscs && grunt test",
     "clean-css-bs": "cleancss --skip-advanced --source-map --output public/static/css/bootstrap.min.css public/static/css/bootstrap.css",
     "clean-css-swog": "cleancss --skip-advanced --source-map --output public/static/css/swog.min.css public/static/css/swog.css",
