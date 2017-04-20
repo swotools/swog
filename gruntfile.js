@@ -109,8 +109,7 @@ module.exports = function(grunt) {
       },
       swog: {
         options: {
-          banner: '<%= banner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>\n+function () {\n',
-          footer: '\n}();'
+          banner: '<%= banner %>\n',
         },
         files: {
           src: '<%= concat.swog.dest %>'
@@ -179,8 +178,11 @@ module.exports = function(grunt) {
       'clean-css-swog': {
         command: 'npm run clean-css-swog'
       },
-      postcss: {
-        command: 'npm run postcss'
+      'postcss-bs': {
+        command: 'npm run postcss-bs'
+      },
+      'postcss-swog': {
+        command: 'npm run postcss-swog'
       },
       sass_bs: {
         command: 'npm run sass-bs'
@@ -197,60 +199,63 @@ module.exports = function(grunt) {
 			'uglify-swog': {
         command: 'npm run uglify-swog'
       }
-    },
-    compress: {
-      main: {
-        options: {
-          archive: 'bootstrap-<%= pkg.version %>-dist.zip',
-          mode: 'zip',
-          level: 9,
-          pretty: true
-        },
-        files: [{
-          expand: true,
-          cwd: 'dist/',
-          src: ['**'],
-          dest: 'bootstrap-<%= pkg.version %>-dist'
-        }]
-      }
     }
   });
 
   // These plugins provide necessary tasks.
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('dist-jsbs', [
+  grunt.registerTask('dev-jsbs', [
     //'clean:bsjs',
     'babel:dev',
     'concat:bootstrap',
     'babel:dist',
-    'stamp:bootstrap',
+    'stamp:bootstrap'
+  ]);
+  grunt.registerTask('dist-jsbs', [
+    'dev-jsbs',
     'exec:uglify-bs'
   ]);
 
-  grunt.registerTask('dist-jsswog', [
+  grunt.registerTask('dev-jsswog', [
     //'clean:swogjs',
     //'babel:dev',
     'concat:swog',
     //'babel:dist',
-    'stamp:swog',
+    'stamp:swog'
+  ]);
+  grunt.registerTask('dist-jsswog', [
+    'dev-jsswog',
     'exec:uglify-swog'
   ]);
 
-  grunt.registerTask('dist-bscss', [
+  grunt.registerTask('dev-bscss', [
     //'clean:bscss',
     'exec:sass_bs',
-    'exec:postcss',
+    'exec:postcss-bs'
+  ]);
+  grunt.registerTask('dist-bscss', [
+    'dev-bscss',
     'exec:clean-css-bs'
   ]);
 
-  grunt.registerTask('dist-swogcss', [
+  grunt.registerTask('dev-swogcss', [
     //'clean:swogcss',
     'exec:sass_swog',
-    'exec:postcss',
+    'exec:postcss-swog'
+  ]);
+  grunt.registerTask('dist-swogcss', [
+    'dev-swogcss',
     'exec:clean-css-swog'
   ]);
 
+  grunt.registerTask('dev', [
+    'clean:dist',
+    'dev-swogcss',
+    'dev-bscss',
+    'dev-jsswog',
+    'dev-jsbs'
+  ]);
   grunt.registerTask('dist', [
     'clean:dist',
     'dist-swogcss',
@@ -261,7 +266,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test-scss', ['exec:scss-lint']);
   // Default Task is basically a rebuild
-  grunt.registerTask('default', ['dist']);
+  grunt.registerTask('default', ['dev']);
   // Moved to the tasks folder:
   // grunt.registerTask('dev', ['connect', 'watch']);
 };
