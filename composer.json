@@ -1,5 +1,5 @@
 {
-  "name": "swolab/swog",
+  "name": "swotools/swog",
   "description": "Solar Web Operator - Graphic Unit Interface",
   "keywords": [
     "css",
@@ -10,8 +10,10 @@
   ],
   "homepage": "http://agenziasmart.com/swo",
   "authors": [{
-    "name": "Davide Pellegrino"
-  }],
+    "name": "AgenziaSmart",
+    "email": "it@agenziasmart.com",
+    "homepage": "http://www.agenziasmart.com/"
+}],
   "license": "MIT",
   "require": {
     "php": ">=5.5.0",
