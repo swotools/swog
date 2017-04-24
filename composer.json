@@ -10,12 +10,7 @@
   ],
   "homepage": "http://agenziasmart.com/swo",
   "authors": [{
-    "name": "Davide Pellegrino",
-    "email": "dp@agenziasmart.com"
-  }],
-  "repositories": [{
-    "type": "git",
-    "url": "https://github.com/swotools/tools"
+    "name": "Davide Pellegrino"
   }],
   "prefer-stable": true,
   "license": "MIT",

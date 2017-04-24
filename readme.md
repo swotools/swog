@@ -22,16 +22,10 @@ $ npm install
 $ npm update
 ```
 
-#### Includi in composer
+#### Includi in composer-dev
 ```json
-"repositories": [
-  {
-      "type": "git",
-      "url": "https://github.com/swotools/swog"
-  }
-],
-"require": {
-  "swotools/swog": "^1.0"
+"require-dev": {
+  "swotools/swog": "^1.1"
 }
 ```
 
