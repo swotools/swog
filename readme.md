@@ -1,13 +1,13 @@
 # SWOG / Graphic Framework v1.1.1
-SWOG 1 utilizza i seguenti componenti
-* Bootstrap 3 [on GitHub](https://github.com/twbs/bootstrap)
+SWOG utilizza i seguenti componenti
+* Bootstrap 3.3.7 [on GitHub](https://github.com/twbs/bootstrap/tree/v3.3.7)
 * Sass
 * Js
 * Nodejs
 * npm
 * grunt
 
-## Major
+## v1 Major 1
 Task in gruntfile, postcss senza maps. Definiti bene i dest e dist.<br>
 I file saranno:<br>
 bootstrap.css | .min in produzione
@@ -16,30 +16,32 @@ bootstrap.js | .min in produzione
 swog.js | .min in produzione
 
 
-## Installing
-
+## Installing SWOG
 ```bash
-$ npm install
-$ npm update
+composer require --dev swotools/swog
 ```
-
-#### Includi in composer-dev
+Oppure
 ```json
 "require-dev": {
   "swotools/swog": "^1.1"
 }
 ```
+## Installing packages
+```bash
+$ npm install
+$ npm update
+```
 
-#### Aggiungi i comandi script a composer
+## Comandi SWOG
 I comandi di installazione, manutenzione e aggiornamento di swog sono inclusi in Tools (swotools) richiesto ad ogni installazione di swog.
 ```json
 "scripts": {
   "swog:install": "bash vendor/swotools/tools/bin/swog/install.sh"
 },
 ```
-**ATT!!** Ti ricordo che SWOG include anche Tools di default
+Per tutti i comandi disponibili, visita [questa pagina](https://github.com/swotools/tools#comandi)
 
-## Styling with swo.sass using npm grunt
+## Styling with SWOG using grunt
 
 Task                | Description
 :------------------ | :-------------------------------------
@@ -53,17 +55,16 @@ grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
 grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
 grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 
-## Personalizzare Sass
-
+## SWOG Sass
+Gli stili del sito li scrivi in SASS nel file `stile.scss`, le variabili le metti nel file `variabili.scss` ovviamente in SASS
 ### Bootstrap
+### Swog
+#### variabili.scss
 
-Modifica il file `variables.scss` in `./scss/bs3/bootstrap/`
-
-### SWOG
-
-
-Gli stili del sito li scrivi in SASS nel file `stile.scss` , le variabili le metti nel file `variabili.scss` ovviamente in SASS
-
+```css
+$giallo:    #ffcc00 !default;
+$blusmart: #rgb(0, 42, 190);
+```
 #### stile.scss
 
 ```css
@@ -73,32 +74,13 @@ body {padding-top: 50px;overflow-x: hidden;}
     background-color: $giallo;
 }
 ```
-
-#### variabili.scss
-
-```css
-$giallo:    #ffcc00 !default;
-$blusmart: #rgb(0, 42, 190);
-```
-
-## Personalizzare Js
+## SWOG Js
 
 ### Bootstrap
 
 Per escludere libreria JS da bootstrap commenta riga in file `./grunt/tasks/options/concat.js` del task
 
-## Switching Sass compilers
-
-Puoi usare 2 compilatori. Libsass è migliore, non dipende da ruby ed è mantenuto
-Bootstrap will be compiled with [libsass][libsass] by default, but you can opt into traditional Ruby Sass by setting the `SWO_SASS` environment variable. Two options are supported:
-
-* `libsass` (default) to use [libsass][libsass] via [grunt-sass][grunt-sass].
-* `sass` to use [Ruby Sass][ruby-sass] via [grunt-contrib-sass][grunt-contrib-sass].
-
-For example, run `SWO_SASS=sass grunt` to test and build Bootstrap with Ruby Sass.
-
-### SWOG
-
+### Swog
 #### general.js
 
 Utilizza il file `general.js` in `./js/swog` .
@@ -126,8 +108,17 @@ function prova(al) {
   alert('ehi come va ' + al);
 }
 ```
+## Switching Sass compilers
+Puoi usare 2 compilatori. Libsass è migliore, non dipende da ruby ed è mantenuto
+Bootstrap will be compiled with [libsass][libsass] by default, but you can opt into traditional Ruby Sass by setting the `SWO_SASS` environment variable. Two options are supported:
 
-## Compilare html con emmet
+* `libsass` (default) to use [libsass][libsass] via [grunt-sass][grunt-sass].
+* `sass` to use [Ruby Sass][ruby-sass] via [grunt-contrib-sass][grunt-contrib-sass].
+
+For example, run `SWO_SASS=sass grunt` to test and build Bootstrap with Ruby Sass.
+
+## Note
+### Compilare html con emmet
 
 ```code
 div.row>.col-md-5+.col-md-7
@@ -142,12 +133,7 @@ Poi premi tab
 
 Docs -> <http://docs.emmet.io>
 
-## ToDO
-
--- scss lint da terminale, jscs, eslint
-
-## Note
-
+### Rinomina file
 Quando importi da TWBS SASS, rinomina i file
 * _bootstrap.scss
 * _bootstrap-sprockets.scss
@@ -157,3 +143,7 @@ Quando importi da TWBS SASS, rinomina i file
 SENZA UNDERSCORE!
 
 "glob": "~4.3.1", - serve per includere i task first cm 5-8-16
+
+## ToDO
+
+-- scss lint da terminale, jscs, eslint
