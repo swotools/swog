@@ -9,11 +9,11 @@ SWOG utilizza i seguenti componenti
 
 ## v1 Major 1
 Task in gruntfile, postcss senza maps. Definiti bene i dest e dist.<br>
-I file saranno:<br>
-bootstrap.css | .min in produzione
-swog.css | .min in produzione
-bootstrap.js | .min in produzione
-swog.js | .min in produzione
+I file saranno:
+* bootstrap.css | .min in produzione
+* swog.css | .min in produzione
+* bootstrap.js | .min in produzione
+* swog.js | .min in produzione
 
 
 ## Installing SWOG
