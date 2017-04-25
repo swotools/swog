@@ -18,7 +18,7 @@ swog.js | .min in produzione
 
 ## Installing SWOG
 ```bash
-composer require --dev swotools/swog
+composer require --dev swotools/swog 1.1
 ```
 Oppure
 ```json
