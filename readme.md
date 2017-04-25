@@ -55,9 +55,10 @@ grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
 grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
 grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 
-## SWOG Sass
+## Sass
 Gli stili del sito li scrivi in SASS nel file `stile.scss`, le variabili le metti nel file `variabili.scss` ovviamente in SASS
 ### Bootstrap
+wip
 ### Swog
 #### variabili.scss
 
@@ -74,7 +75,7 @@ body {padding-top: 50px;overflow-x: hidden;}
     background-color: $giallo;
 }
 ```
-## SWOG Js
+## Javascript
 
 ### Bootstrap
 
