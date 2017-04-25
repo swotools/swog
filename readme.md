@@ -1,48 +1,36 @@
 # SWOG / Graphic Framework v2.1.0
 
-- Bootstrap framework v.3.3.7
+- Bootstrap 4.0.0 [on GitHub](https://github.com/twbs/bootstrap/tree/v4.0.0-alpha.6)
 - Sass
 - Js
 - Nodejs
 - npm
 - grunt
-
-## Major
-I file saranno:<br>
-bootstrap.css | .min in produzione
-swog.css | .min in produzione
-bootstrap.js | .min in produzione
-swog.js | .min in produzione
-@todo
-
-## Installing
-
+## Installing SWOG
+```bash
+composer require --dev swotools/swog
+```
+Oppure
+```json
+"require-dev": {
+  "swotools/swog": "^2.1"
+}
+```
+## Installing packages
 ```bash
 $ npm install
 $ npm update
 ```
 
-#### Includi in composer
-```json
-"repositories": [
-  {
-      "type": "git",
-      "url": "https://github.com/swotools/swog"
-  }
-],
-"require": {
-  "swotools/swog": "^1.0"
-}
-```
-
-#### Aggiungi i comandi script a composer
+## Comandi SWOG
 I comandi di installazione, manutenzione e aggiornamento di swog sono inclusi in Tools (swotools) richiesto ad ogni installazione di swog.
 ```json
 "scripts": {
   "swog:install": "bash vendor/swotools/tools/bin/swog/install.sh"
 },
 ```
-**ATT!!** Ti ricordo che SWOG include anche Tools di default
+Per tutti i comandi disponibili, visita [questa pagina](https://github.com/swotools/tools#comandi)
+
 
 ## Styling with swo.sass using npm grunt
 
@@ -64,17 +52,18 @@ grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
 grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
 grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 
-## Personalizzare Sass
 
+## Sass
+Gli stili del sito li scrivi in SASS nel file `stile.scss`, le variabili le metti nel file `variabili.scss` ovviamente in SASS
 ### Bootstrap
+wip
+### Swog
+#### variabili.scss
 
-Modifica il file `variables.scss` in `./scss/bs3/bootstrap/`
-
-### SWOG
-
-
-Gli stili del sito li scrivi in SASS nel file `stile.scss` , le variabili le metti nel file `variabili.scss` ovviamente in SASS
-
+```css
+$giallo:    #ffcc00 !default;
+$blusmart: #rgb(0, 42, 190);
+```
 #### stile.scss
 
 ```css
@@ -84,32 +73,13 @@ body {padding-top: 50px;overflow-x: hidden;}
     background-color: $giallo;
 }
 ```
-
-#### variabili.scss
-
-```css
-$giallo:    #ffcc00 !default;
-$blusmart: #rgb(0, 42, 190);
-```
-
-## Personalizzare Js
+## Javascript
 
 ### Bootstrap
 
 Per escludere libreria JS da bootstrap commenta riga in file `./grunt/tasks/options/concat.js` del task
 
-## Switching Sass compilers
-
-Puoi usare 2 compilatori. Libsass è migliore, non dipende da ruby ed è mantenuto
-Bootstrap will be compiled with [libsass][libsass] by default, but you can opt into traditional Ruby Sass by setting the `SWO_SASS` environment variable. Two options are supported:
-
-* `libsass` (default) to use [libsass][libsass] via [grunt-sass][grunt-sass].
-* `sass` to use [Ruby Sass][ruby-sass] via [grunt-contrib-sass][grunt-contrib-sass].
-
-For example, run `SWO_SASS=sass grunt` to test and build Bootstrap with Ruby Sass.
-
-### SWOG
-
+### Swog
 #### general.js
 
 Utilizza il file `general.js` in `./js/swog` .
@@ -137,8 +107,14 @@ function prova(al) {
   alert('ehi come va ' + al);
 }
 ```
+## Note
+### Manutenzione verso la RC1 da alpha4
+git fetch su bootstrap, carica js e scss in swog e controlla (meld) differenze di gruntfile
 
-## Compilare html con emmet
+### Note
+Versione alpha4 di bootstrap ...
+
+### Compilare html con emmet
 
 ```code
 div.row>.col-md-5+.col-md-7
@@ -157,9 +133,3 @@ Docs -> <http://docs.emmet.io>
 
 Compilato il dist, trovi i file map in public/static.
 Creare upload S3 python dei file bootstrap.min e swog.min in CDN
-
-## Manutenzione verso la RC1 da alpha4
-git fetch su bootstrap, carica js e scss in swog e controlla (meld) differenze di gruntfile
-
-## Note
-Versione alpha4 di bootstrap ...
