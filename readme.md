@@ -1,10 +1,11 @@
-# SWOG / Graphic Framework v1.1.0
-- Bootstrap framework v.3.3.7
-- Sass
-- Js
-- Nodejs
-- npm
-- grunt
+# SWOG / Graphic Framework v1.1.1
+SWOG 1 utilizza i seguenti componenti
+* Bootstrap 3 [on GitHub](https://github.com/twbs/bootstrap)
+* Sass
+* Js
+* Nodejs
+* npm
+* grunt
 
 ## Major
 Task in gruntfile, postcss senza maps. Definiti bene i dest e dist.<br>
