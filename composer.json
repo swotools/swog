@@ -1,6 +1,6 @@
 {
   "name": "swotools/swog",
-  "description": "Solar Web Operator - Graphic Unit Interface",
+  "description": "Solar Web Operator - Graphic Unit Interface - v1 build on bs3.3.7",
   "keywords": [
     "css",
     "js",
@@ -13,7 +13,7 @@
     "name": "AgenziaSmart",
     "email": "it@agenziasmart.com",
     "homepage": "http://www.agenziasmart.com/"
-}],
+  }],
   "license": "MIT",
   "require": {
     "php": ">=5.5.0",
