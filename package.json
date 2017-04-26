@@ -44,8 +44,7 @@
     "postcss-cli": "^2.6.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "shelljs": "^0.7.4",
-    "grunt-contrib-imagemin": "~0.9.4",
-    "glob": "~4.3.1"
+    "grunt-contrib-imagemin": "~0.9.4"
   },
   "engines": {
     "node": ">=4"
