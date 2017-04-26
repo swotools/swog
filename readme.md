@@ -1,4 +1,4 @@
-# SWOG / Graphic Framework v1.1.1
+# SWOG / Graphic Framework v1.2.1
 SWOG utilizza i seguenti componenti
 * Bootstrap 3.3.7 [on GitHub](https://github.com/twbs/bootstrap/tree/v3.3.7)
 * Sass
@@ -7,23 +7,23 @@ SWOG utilizza i seguenti componenti
 * npm
 * grunt
 
-## v1 Major 1
-Task in gruntfile, postcss senza maps. Definiti bene i dest e dist.<br>
+## v1 Major 2
+Tutti i task in `gruntfile.js`, postcss senza maps. Definiti bene i dest e dist.<br>
 I file saranno:
 * bootstrap.css | .min in produzione
 * swog.css | .min in produzione
 * bootstrap.js | .min in produzione
 * swog.js | .min in produzione
-
+Non esiste più la cartella `grunt/`
 
 ## Installing SWOG
 ```bash
-composer require --dev swotools/swog 1.1
+composer require --dev swotools/swog 1.2
 ```
 Oppure
 ```json
 "require-dev": {
-  "swotools/swog": "^1.1"
+  "swotools/swog": "^1.2"
 }
 ```
 ## Installing packages
@@ -64,13 +64,20 @@ wip
 
 ```css
 $giallo:    #ffcc00 !default;
-$blusmart: #rgb(0, 42, 190);
+$blusmart:  rgb(0, 42, 190) !default;
 ```
 #### stile.scss
 
 ```css
-* {margin: 0;padding: 0;}
-body {padding-top: 50px;overflow-x: hidden;}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding-top: 50px;
+  overflow-x: hidden;
+  color: $blusmart;
+}
 .oggi{
     background-color: $giallo;
 }
@@ -79,7 +86,7 @@ body {padding-top: 50px;overflow-x: hidden;}
 
 ### Bootstrap
 
-Per escludere libreria JS da bootstrap commenta riga in file `./grunt/tasks/options/concat.js` del task
+Per escludere libreria JS da bootstrap commenta riga in file `./gruntfile.js` del task `concat:bootstrap`
 
 ### Swog
 #### general.js
@@ -135,7 +142,9 @@ Poi premi tab
 Docs -> <http://docs.emmet.io>
 
 ### Rinomina file
+
 Quando importi da TWBS SASS, rinomina i file
+
 * _bootstrap.scss
 * _bootstrap-sprockets.scss
 * _bootstrap-mincer.scss
@@ -143,8 +152,5 @@ Quando importi da TWBS SASS, rinomina i file
 
 SENZA UNDERSCORE!
 
-"glob": "~4.3.1", - serve per includere i task first cm 5-8-16
-
 ## ToDO
-
 -- scss lint da terminale, jscs, eslint
