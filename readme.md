@@ -62,7 +62,7 @@ wip
 
 ```css
 $giallo:    #ffcc00 !default;
-$blusmart: #rgb(0, 42, 190);
+$blusmart:  rgb(0, 42, 190) !default;
 ```
 #### stile.scss
 
