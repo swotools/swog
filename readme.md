@@ -1,4 +1,4 @@
-# SWOG / Graphic Framework v1.1.1
+# SWOG / Graphic Framework v1.2.1
 SWOG utilizza i seguenti componenti
 * Bootstrap 3.3.7 [on GitHub](https://github.com/twbs/bootstrap/tree/v3.3.7)
 * Sass
@@ -7,7 +7,10 @@ SWOG utilizza i seguenti componenti
 * npm
 * grunt
 
-## v1 Major 1
+## v1 Major 2
+* Elimina cartella grunt/
+* Istruzioni grunt in unico file
+
 Task in gruntfile, postcss senza maps. Definiti bene i dest e dist.<br>
 I file saranno:
 * bootstrap.css | .min in produzione
@@ -135,6 +138,7 @@ Poi premi tab
 Docs -> <http://docs.emmet.io>
 
 ### Rinomina file
+
 Quando importi da TWBS SASS, rinomina i file
 * _bootstrap.scss
 * _bootstrap-sprockets.scss
