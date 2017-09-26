@@ -1,11 +1,16 @@
-# SWOG / Graphic Framework v2.1.0
+# SWOG / Graphic Framework v2.2.0
 
-- Bootstrap 4.0.0 [on GitHub](https://github.com/twbs/bootstrap/tree/v4.0.0-alpha.6)
+- Bootstrap 4.beta [on GitHub](https://github.com/twbs/bootstrap/tree/v4.0.0-beta)
 - Sass
 - Js
 - Nodejs
 - npm
-- grunt
+
+## Novità
+26-09-2017 - termino tentativo. versione beta. NOn riesco a compleate per errori nel minifyjs, trova "const Util = (() " al posto di "const Util = funciton() "
+DA RIVEDERE
+Grunt NON esiste più. Usa solo comandi Nodejs
+
 ## Installing SWOG
 ```bash
 composer require --dev swotools/swog
@@ -36,44 +41,15 @@ Per tutti i comandi disponibili, visita [questa pagina](https://github.com/swoto
 
 Task                | Description
 :------------------ | :-------------------------------------
-dev                 | Compila i dev
 dist                | Compila i dist
-grunt               | (default) Compila dev
-grunt dev-jsbs      | Compila babel bootstrap
-grunt dist-jsbs     | Esegue dev-jsbs e uglify
-grunt dev-jsswog    | Concatena swog
-grunt dist-jsswog   | Esegue dev-jsswog e uglify
-grunt dev-bscss     | Compila i SASS di bootstrap
-grunt dist-bscss    | Esegue il dev-bscss e clean-css
-grunt dev-swogcss   | Compila i SASS di swog
-grunt dist-swogcss  | Esegue il dev-swogcss e clean-css
-grunt watch         | Ascolta i task qui sotto
-grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
-grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
-grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
+watch               |
+watch-css           |
+watch-js            |
 
 
-## Sass
-Gli stili del sito li scrivi in SASS nel file `stile.scss`, le variabili le metti nel file `variabili.scss` ovviamente in SASS
 ### Bootstrap
-wip
+
 ### Swog
-#### variabili.scss
-
-```css
-$giallo:    #ffcc00 !default;
-$blusmart:  rgb(0, 42, 190) !default;
-```
-#### stile.scss
-
-```css
-* {margin: 0;padding: 0;}
-body {padding-top: 50px;overflow-x: hidden;}
-.oggi{
-    background-color: $giallo;
-}
-```
-## Javascript
 
 ### Bootstrap
 
@@ -112,7 +88,7 @@ function prova(al) {
 git fetch su bootstrap, carica js e scss in swog e controlla (meld) differenze di gruntfile
 
 ### Note
-Versione alpha4 di bootstrap ...
+Versione 4 beta di bootstrap ...
 
 ### Compilare html con emmet
 
@@ -131,5 +107,4 @@ Docs -> <http://docs.emmet.io>
 
 ## ToDO
 
-Compilato il dist, trovi i file map in public/static.
-Creare upload S3 python dei file bootstrap.min e swog.min in CDN
+- [ ] Creare upload S3 python dei file bootstrap.min e swog.min in CDN

@@ -1,14 +1,14 @@
 {
   "name": "swog",
-  "description": "SWOG Bootstrap Alpha4.6",
-  "version": "2.1.0",
+  "description": "SWOG Bootstrap 4beta",
+  "version": "2.2.0",
   "homepage": "http://www.agenziasmart.com",
   "author": "The SWO Team (http://agenziasmart.com/swo)",
   "license": "UNLICENSED",
   "distdir": "public/static",
   "framework": {
     "name": "bootstrap",
-    "version": "4.0.0-alpha.6",
+    "version": "4.0.0-beta",
     "homepage": "https://getbootstrap.com",
     "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
     "contributors": [
@@ -16,49 +16,54 @@
     ]
   },
   "scripts": {
-    "eslint": "eslint --config js/.eslintrc.json js/bs4 js/swog",
-    "postcss-bs": "postcss --config scss/postcss.js --replace public/static/css/bootstrap.css",
-    "postcss-swog": "postcss --config scss/postcss.js --replace public/static/css/swog.css",
-    "test": "npm run eslint && npm run jscs && grunt test",
-    "clean-css-bs": "cleancss --skip-advanced --source-map --output public/static/css/bootstrap.min.css public/static/css/bootstrap.css",
-    "clean-css-swog": "cleancss --skip-advanced --source-map --output public/static/css/swog.min.css public/static/css/swog.css",
-    "eslint": "eslint --ignore-path .eslintignore js && eslint --config js/tests/.eslintrc.json --env node grunt Gruntfile.js && eslint --config js/tests/.eslintrc.json docs/assets/js/src docs/assets/js/ie-emulation-modes-warning.js docs/assets/js/ie10-viewport-bug-workaround.js",
-    "sass-bs": "node-sass --output-style expanded --source-map true --precision 6 scss/bs4/bootstrap.scss public/static/css/bootstrap.css",
-    "sass-swog": "node-sass --output-style expanded --source-map true --precision 6 scss/swog/swog.scss public/static/css/swog.css",
-    "scss-lint": "bundle exec scss-lint --config scss/.scss-lint.yml --exclude scss/bs4/_normalize.scss scss/bs4/*.scss",
-    "uglify-bs": "uglifyjs --compress warnings=false --mangle --comments '/^!/' --output public/static/js/bootstrap.min.js public/static/js/bootstrap.js",
-    "uglify-swog": "uglifyjs --compress warnings=false --mangle --comments '/^!/' --output public/static/js/swog.min.js public/static/js/swog.js"
+    "css": "npm-run-all css-lint css-compile css-prefix css-minify",
+    "css-lint": "bundle exec scss-lint --config .scss-lint.yml scss/**/*.scss",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bs4/bootstrap.scss public/static/css/bootstrap.css",
+    "css-prefix": "postcss --config build/postcss.config.js --replace public/static/css/*.css",
+    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output public/static/css/bootstrap.min.css public/static/css/bootstrap.css",
+
+    "js": "npm-run-all js-lint js-compile js-minify",
+    "js-lint": "eslint js/ && eslint --config js/tests/.eslintrc.json --env node build/",
+    "js-compile": "npm-run-all --parallel js-compile-*",
+    "js-compile-standalone": "cross-env ROLLUP=true rollup --environment BUNDLE:false --config build/rollup.config.js",
+    "js-compile-bundle": "cross-env ROLLUP=true rollup --environment BUNDLE:true --config build/rollup.config.js",
+    "js-compile-plugins": "cross-env PLUGINS=true babel js/bs4/src/ --out-dir js/dist/ --source-maps",
+    "js-minify": "npm-run-all --parallel js-minify-standalone js-minify-bundle",
+    "js-minify-standalone": "uglifyjs --config-file build/uglifyjs.config.json --output public/static/js/bootstrap.min.js public/static/js/bootstrap.js",
+    "js-minify-bundle": "uglifyjs --config-file build/uglifyjs.config.json --output public/static/js/bootstrap.bundle.min.js public/static/js/bootstrap.bundle.js",
+    "dist": "npm-run-all --parallel css js",
+    "watch": "npm-run-all --parallel watch-css watch-js",
+    "watch-css": "nodemon --ignore js/ --ignore public/ -e scss -x \"npm run css\"",
+    "watch-js": "nodemon --ignore scss/ --ignore js/dist/ --ignore dist/ -e js -x \"npm run js-compile-plugins\""
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "jquery": "^3.0.0",
+    "popper.js": "^1.12.3"
   },
   "devDependencies": {
-    "autoprefixer": "^6.6.1",
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-transform-es2015-modules-strip": "^0.1.0",
-    "babel-preset-es2015": "^6.18.0",
-    "clean-css": "^3.4.23",
-    "eslint": "^3.12.2",
-    "grunt": "^1.0.1",
-    "grunt-exec": "^1.0.1",
-    "grunt-babel": "^6.0.0",
-    "grunt-build-control": "^0.7.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-compress": "^1.3.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-stamp": "^0.3.0",
-    "load-grunt-tasks": "^3.5.2",
-    "postcss-cli": "^2.6.0",
-    "postcss-flexbugs-fixes": "^2.1.0",
-    "node-sass": "^4.1.1",
-    "shelljs": "^0.7.5",
-    "grunt-contrib-imagemin": "~0.9.4",
-    "uglify-js": "^2.7.5"
+    "autoprefixer": "^7.1.2",
+    "babel-cli": "^7.0.0-beta.0",
+    "babel-eslint": "^8.0.0",
+    "babel-plugin-external-helpers": "^7.0.0-beta.0",
+    "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
+    "babel-preset-env": "^2.0.0-beta.0",
+    "clean-css-cli": "^4.1.6",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.2.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "popper.js": "^1.12.5",
+    "postcss-cli": "^4.1.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "shelljs": "^0.7.8",
+    "uglify-js": "^3.0.24"
   },
   "engines": {
     "node": ">=4"
-  },
-  "dependencies": {
-    "jquery": ">=1.9.1",
-    "tether": "^1.4.0"
   }
+
 }
