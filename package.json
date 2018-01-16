@@ -1,7 +1,7 @@
 {
   "name": "swog",
   "description": "SWOG Bootstrap 3.3.7",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "homepage": "http://www.agenziasmart.com",
   "author": "The SWO Team (http://agenziasmart.com/swo)",
   "license": "UNLICENSED",
@@ -25,7 +25,7 @@
     "autoprefixer": "^6.5.0",
     "eslint": "^3.7.1",
     "grunt": "~1.0.1",
-    "grunt-exec": "^1.0.0",
+    "grunt-exec": "^3.0.0",
     "grunt-build-control": "^0.7.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-compress": "^1.1.0",
@@ -35,7 +35,6 @@
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-exec": "^1.0.1",
     "grunt-sass": "^1.2.1",
     "grunt-scss-lint": "^0.5.0",
     "grunt-stamp": "^0.3.0",
@@ -44,7 +43,9 @@
     "postcss-cli": "^2.6.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "shelljs": "^0.7.4",
-    "grunt-contrib-imagemin": "~0.9.4"
+    "grunt-contrib-imagemin": "~0.9.4",
+    "bootstrap-sass": "^3.3.7",
+    "lodash": "^4.16.2"
   },
   "engines": {
     "node": ">=4"
