@@ -1,4 +1,6 @@
-# SWOG / Graphic Framework v1.2.1
+SWOG / Graphic Framework v1.2.2
+====================
+
 SWOG utilizza i seguenti componenti
 * Bootstrap 3.3.7 [on GitHub](https://github.com/twbs/bootstrap/tree/v3.3.7)
 * Sass
@@ -6,17 +8,19 @@ SWOG utilizza i seguenti componenti
 * Nodejs
 * npm
 * grunt
+* Nuovi mixin swog sass
 
-## v1 Major 2
+v1 major 2
+-----------
 Tutti i task in `gruntfile.js`, postcss senza maps. Definiti bene i dest e dist.<br>
 I file saranno:
-* bootstrap.css | .min in produzione
-* swog.css | .min in produzione
+* app.css | .min in produzione
 * bootstrap.js | .min in produzione
 * swog.js | .min in produzione
-Non esiste più la cartella `grunt/`
 
-## Installing SWOG
+SWOG
+-----------
+
 ```bash
 composer require --dev swotools/swog 1.2
 ```
@@ -26,13 +30,13 @@ Oppure
   "swotools/swog": "^1.2"
 }
 ```
-## Installing packages
+#### Installing packages
 ```bash
 $ npm install
 $ npm update
 ```
 
-## Comandi SWOG
+#### Comandi
 I comandi di installazione, manutenzione e aggiornamento di swog sono inclusi in Tools (swotools) richiesto ad ogni installazione di swog.
 ```json
 "scripts": {
@@ -41,82 +45,19 @@ I comandi di installazione, manutenzione e aggiornamento di swog sono inclusi in
 ```
 Per tutti i comandi disponibili, visita [questa pagina](https://github.com/swotools/tools#comandi)
 
-## Styling with SWOG using grunt
-
-Task                | Description
-:------------------ | :-------------------------------------
-grunt               | Compila tutti task dev-** (qui sotto)
-grunt dev-jsbs      | Compila js bootstrap
-grunt dev-jsswog    | Compila js swog
-grunt dev-bscss     | Compila i SASS di bootstrap
-grunt dev-swogcss   | Compila i SASS di swog
-grunt watch         | Ascolta i task qui sotto
-grunt watch:bscss   | Ascolta solo la cartella SCSS di bs4/
-grunt watch:swogcss | Ascolta solo la cartella SCSS di swog/
-grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
-
-## Sass
-Gli stili del sito li scrivi in SASS nel file `stile.scss`, le variabili le metti nel file `variabili.scss` ovviamente in SASS
-### Bootstrap
-wip
-### Swog
-#### variabili.scss
-
-```css
-$giallo:    #ffcc00 !default;
-$blusmart:  rgb(0, 42, 190) !default;
-```
-#### stile.scss
-
-```css
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  padding-top: 50px;
-  overflow-x: hidden;
-  color: $blusmart;
-}
-.oggi{
-    background-color: $giallo;
-}
-```
-## Javascript
-
-### Bootstrap
+#### Bootstrap
 
 Per escludere libreria JS da bootstrap commenta riga in file `./gruntfile.js` del task `concat:bootstrap`
 
-### Swog
-#### general.js
+#### Swog.js
 
 Utilizza il file `general.js` in `./js/swog` .
 
-```javascript
-if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-  var msViewportStyle = document.createElement('style');
-  msViewportStyle.appendChild(
-    document.createTextNode(
-      '@-ms-viewport{width:auto!important}'
-    )
-  );
-  document.querySelector('head').appendChild(msViewportStyle);
-}
+#### Sass
 
-var logoutLink = $('#logoutLink'),
-  logoutForm = $('#logout');
-//thetoken = $('meta[name=csrf-token]').attr("content");
-logoutLink.click(function() {
-  logoutForm.submit();
-  return false;
-});
+Gli stili personalizzati sono nel file `scss/swog/_stile.scss`, le variabili le metti nel file `scss/swog/variabili.scss` ovviamente in SASS. Nel file `scss/swog/bootstrap.scss` scegli i componenti sass da includere.
 
-function prova(al) {
-  alert('ehi come va ' + al);
-}
-```
-## Switching Sass compilers
+#### Switching Sass compilers
 Puoi usare 2 compilatori. Libsass è migliore, non dipende da ruby ed è mantenuto
 Bootstrap will be compiled with [libsass][libsass] by default, but you can opt into traditional Ruby Sass by setting the `SWO_SASS` environment variable. Two options are supported:
 
@@ -125,32 +66,28 @@ Bootstrap will be compiled with [libsass][libsass] by default, but you can opt i
 
 For example, run `SWO_SASS=sass grunt` to test and build Bootstrap with Ruby Sass.
 
-## Note
-### Compilare html con emmet
 
-```code
-div.row>.col-md-5+.col-md-7
-```
-Poi premi tab
-```code
-<div class="row">
-  <div class="col-md-5"></div>
-  <div class="col-md-7"></div>
-</div>
-```
+GRUNT
+-----------
 
-Docs -> <http://docs.emmet.io>
+Task                | Description
+:------------------ | :-------------------------------------
+grunt               | Compila tutti task dev-** (qui sotto)
+grunt dev-jsbs      | Compila js bootstrap
+grunt dev-jsswog    | Compila js swog
+grunt dev-style     | Compila i SASS
+grunt watch         | Ascolta i task qui sotto
+grunt watch:style   | Ascolta solo la cartella SCSS
+grunt watch:swogjs  | Ascolta solo la cartella JS di swog/
 
-### Rinomina file
 
-Quando importi da TWBS SASS, rinomina i file
+NOTE
+-----------
 
-* _bootstrap.scss
-* _bootstrap-sprockets.scss
-* _bootstrap-mincer.scss
-* _bootstrap-compass.scss
 
-SENZA UNDERSCORE!
+TODO
+-----------
 
-## ToDO
--- scss lint da terminale, jscs, eslint
+- [ ] Implementa Webpack js
+- [ ] Gestione moduli js con nodejs
+- [ ] Ottenere come per css un unico file app.js (.min in produzione)
