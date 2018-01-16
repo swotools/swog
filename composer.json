@@ -1,6 +1,6 @@
 {
   "name": "swotools/swog",
-  "description": "Solar Web Operator - Graphic Unit Interface - v1 build on bs3.3.7",
+  "description": "Solar Web Operator - GUI with twbs 3.3.7",
   "keywords": [
     "css",
     "js",
@@ -21,7 +21,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.1.x-dev"
+      "dev-master": "1.2.x-dev"
     }
   }
 }

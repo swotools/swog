@@ -9,6 +9,7 @@ SWOG utilizza i seguenti componenti
 * npm
 * grunt
 * Nuovi mixin swog sass
+* Nuovi file bin di configurazione e sotto versione
 
 v1 major 2
 -----------
