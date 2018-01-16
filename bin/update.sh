@@ -9,8 +9,7 @@ BASEDIR=$1
 # i file da aggiornare nella root del progetto.
 # Escludo options perchè ogni singolo progetto può modificare parametri
 # es. Concat, esclude js di carousel etc..
-SWOG_COPY=( "package.json" "gruntfile.js" "grunt" )
-SWOG_EXCLUDE=( "grunt/options" )
+SWOG_COPY=( "package.json" "gruntfile.js" )
 
 if [ -z $BASEDIR ]; then
    echo "SWOG base dir is Empty"
@@ -21,7 +20,7 @@ if [ -f "$BASEDIR/package.json" ];then
   echo "SWOG updating ..."
   for fsobject in "${SWOG_COPY[@]}";do
     # echo "$VENDORDIR/$fsobject in $BASEDIR"
-    if rsync -a "$VENDORDIR/$fsobject" $BASEDIR --exclude ${SWOG_EXCLUDE[@]};then
+    if rsync -a "$VENDORDIR/$fsobject" $BASEDIR;then
       echo "$fsobject Updated"
     else
       echo "$fsobject FAILED!"
