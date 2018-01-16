@@ -8,13 +8,16 @@ module.exports = function(grunt) {
 		var object = {};
 		var key;
 
-		glob.sync('*', {cwd: path}).forEach(function(option) {
+		glob.sync('*', {
+			cwd: path
+		}).forEach(function(option) {
 			key = option.replace(/\.js$/, '');
 			object[key] = require(path + option);
 		});
 
 		return object;
 	}
+	var configBridge = grunt.file.readJSON('./js/configBridge.json', { encoding: 'utf8' });
 
 	// Load all the tasks options in tasks/options base on the name:
 	// watch.js => watch{}
@@ -24,9 +27,8 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		banner: '/*!\n' + ' * SWOG v<%= pkg.version %> (<%= pkg.homepage %>)\n' + ' * Copyright 2016-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' + ' */\n',
 		bsbanner: '/*!\n' + ' * Bootstrap v<%= pkg.framework.version %> (<%= pkg.framework.homepage %>)\n' + ' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= pkg.framework.author %>\n' + ' * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n' + ' */\n',
-		jqueryCheck: 'if (typeof jQuery === \'undefined\') {\n' + '  throw new Error(\'Bootstrap\\\'s JavaScript requires jQuery\')\n' + '}\n',
-		jqueryVersionCheck: '+function ($) {\n' + '\'use strict\';\n' + '  var version = $.fn.jquery.split(\' \')[0].split(\'.\')\n' + '  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] >= 3)) {\n' + '    throw new Error(\'Bootstrap\\\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0\')\n' + '  }\n' + '}(jQuery);\n\n',
-
+		jqueryCheck: configBridge.config.jqueryCheck.join('\n'),
+		jqueryVersionCheck: configBridge.config.jqueryVersionCheck.join('\n'),
 		clean: {
 			// dist: {
 			// 	src: [
@@ -34,11 +36,8 @@ module.exports = function(grunt) {
 			// 		"<%=pkg.distdir%>/js"
 			// 	]
 			// },
-			swogcss: {
-				src: ["<%=pkg.distdir%>/css/swog*"]
-			},
-			bscss: {
-				src: ["<%=pkg.distdir%>/css/bootstrap*"]
+			style: {
+				src: ["<%=pkg.distdir%>/css/app*"]
 			},
 			bsjs: {
 				src: ["<%=pkg.distdir%>/js/bootstrap*"]
@@ -56,18 +55,18 @@ module.exports = function(grunt) {
 			},
 			bootstrap: {
 				src: [
-					'js/bs3/transition.js',
-					'js/bs3/alert.js',
-					'js/bs3/button.js',
-					'js/bs3/carousel.js',
-					'js/bs3/collapse.js',
-					'js/bs3/dropdown.js',
-					'js/bs3/modal.js',
-					'js/bs3/tooltip.js',
-					'js/bs3/popover.js',
-					'js/bs3/scrollspy.js',
-					'js/bs3/tab.js',
-					'js/bs3/affix.js'
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+					//'node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+					//'node_modules/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+					//'node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+					'node_modules/bootstrap-sass/assets/javascripts/bootstrap/affix.js'
 				],
 				dest: '<%=pkg.distdir%>/js/<%= pkg.framework.name %>.js'
 			},
@@ -78,7 +77,7 @@ module.exports = function(grunt) {
 		},
 		copy: {
 			fonts: {
-				files: [// includes files within path
+				files: [ // includes files within path
 					//{expand: true, src: ['path/*'], dest: 'dest/', filter: 'isFile'},
 					// includes files within path and its sub-directories
 					//{expand: true, src: ['<%=devdir%>/fonts/**/*'], dest: '<%=pkg.distdir%>/fonts/'},
@@ -100,17 +99,15 @@ module.exports = function(grunt) {
 				advanced: false
 			},
 			core: {
-				files: [
-					{
-						expand: true,
-						cwd: '<%=pkg.distdir%>/css',
-						src: [
-							'*.css', '!*.min.css'
-						],
-						dest: '<%=pkg.distdir%>/css',
-						ext: '.min.css'
-					}
-				]
+				files: [{
+					expand: true,
+					cwd: '<%=pkg.distdir%>/css',
+					src: [
+						'*.css', '!*.min.css'
+					],
+					dest: '<%=pkg.distdir%>/css',
+					ext: '.min.css'
+				}]
 			},
 			dist: {
 				options: {
@@ -132,14 +129,12 @@ module.exports = function(grunt) {
 		},
 		imagemin: {
 			dynamic: {
-				files: [
-					{
-						expand: true,
-						cwd: '<%=devdir%>/i/',
-						src: ['**/*.{png,jpg,jpeg,gif}'],
-						dest: '<%=pkg.distdir%>/i/'
-					}
-				]
+				files: [{
+					expand: true,
+					cwd: '<%=devdir%>/i/',
+					src: ['**/*.{png,jpg,jpeg,gif}'],
+					dest: '<%=pkg.distdir%>/i/'
+				}]
 			}
 		},
 		scsslint: {
@@ -149,7 +144,7 @@ module.exports = function(grunt) {
 				reporterOutput: null
 			},
 			bootstrap: {
-				src: ['scss/**/*.scss', '!scss/bs3/_normalize.scss']
+				src: ['scss/**/*.scss']
 			}
 		},
 		stamp: {
@@ -188,21 +183,13 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			bscss: {
-				files: 'scss/bs3/**/*.scss',
-				tasks: ['dev-bscss', 'exec:postcss']
-			},
-			swogcss: {
-				files: 'scss/swog/*.scss',
-				tasks: ['dev-swogcss', 'exec:postcss']
-			},
-			allcss: {
+			style: {
 				files: 'scss/**/*.scss',
-				tasks: ['dev-bscss', 'dev-swogcss', 'exec:postcss']
+				tasks: ['dev-style', 'exec:postcss']
 			},
 			swogjs: {
 				files: 'js/swog/*.js',
-				tasks: ['dev-swogcss']
+				tasks: ['dev-jsswog']
 			}
 		}
 
@@ -227,18 +214,16 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('dev-jsbs', ['clean:bsjs', 'concat:bootstrap']);
 	grunt.registerTask('dev-jsswog', ['clean:swogjs', 'concat:swog']);
-	grunt.registerTask('dev-bscss', ['clean:bscss', 'sass:bootstrap']);
-	grunt.registerTask('dev-swogcss', ['clean:swogcss', 'sass:swog']);
-	grunt.registerTask('dist-bscss', ['clean:bscss', 'sass:bootstrapdist']);
-	grunt.registerTask('dist-swogcss', ['clean:swogcss', 'sass:swogdist']);
+	grunt.registerTask('dev-style', ['clean:style', 'sass:style']);
+
+	grunt.registerTask('dist-style', ['clean:style', 'sass:styledist']);
 
 	grunt.registerTask('dev', [
 		'dev-jsbs',
 		'stamp:bootstrap',
 		'dev-jsswog',
 		'stamp:swog',
-		'dev-bscss',
-		'dev-swogcss',
+		'dev-style',
 		'exec:postcss'
 	]);
 	grunt.registerTask('dist', [
@@ -246,8 +231,7 @@ module.exports = function(grunt) {
 		'stamp:bootstrap',
 		'dev-jsswog',
 		'stamp:swog',
-		'dist-bscss',
-		'dist-swogcss',
+		'dist-style',
 		'exec:postcss',
 		'uglify:bootstrap',
 		'uglify:swog',

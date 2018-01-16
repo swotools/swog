@@ -1,0 +1,164 @@
+html {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    padding-top: $navbar-h;
+
+    &.authpage {
+        margin: 0;
+        padding: 0;
+        //background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        //background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+        //background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    }
+
+    &.errorpage {
+      margin: 0;
+      padding: 0;
+    }
+
+    &.cover {
+        @include cover();
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 300;
+}
+
+.navbar {
+    .navbar-brand {
+        margin-right: $gutter;
+        padding: 0 7px;
+        //padding: 5px;
+        img {
+            height: 100%;
+            max-height: $navbar-h;
+            padding: 5px;
+            width: 100%;
+        }
+    }
+}
+
+.wrapper {
+    background-color: $bgwrapper;
+    padding: $gutter 0;
+}
+
+.alertsys {
+    margin: $gutter;
+}
+@media (min-width: 1200px) {
+    #sidebar.affix-top {
+        position: static;
+        width: 100%;
+    }
+
+    #sidebar.affix {
+        position: fixed;
+        top: $navbar-h + 15;
+        width: 273.75px;
+    }
+
+    #sidebar.affix-bottom {
+        position: fixed;
+        width: 273.75px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    #sidebar.affix-top {
+        position: static;
+        width: 100%;
+    }
+
+    #sidebar.affix {
+        position: fixed;
+        top: $navbar-h + 15;
+        width: 223.75px;
+    }
+
+    #sidebar.affix-bottom {
+        position: fixed;
+        width: 223.75px;
+    }
+}
+@media (max-width: 991px) {
+    #sidebar.affix {
+        position: static;
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.panel {
+    border: 0 !important;
+    box-shadow: 0 0 8px #d8dbe3;
+
+    .panel-heading {
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #f2f2f2;
+
+        .panel-title {
+            margin: 6px 0 2px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+}
+
+.modal {
+    .modal-title {
+        font-weight: 700;
+    }
+}
+
+.fullpage {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    .fullcontent {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.authbox {
+    padding: $gutter;
+    background-color: white;
+    border-radius: 5px;
+
+    .authheader {
+        img {
+            max-width: 75px;
+        }
+
+        h2 {
+            font-weight: 700;
+        }
+    }
+
+    .authinfo {}
+
+    .authfooter {
+        margin-top: $gutter;
+        font-size: 11px;
+    }
+}
+
+.footer {
+    border-top: 1px solid darken(#f2f3f3, 15%);
+    width: 100%;
+    padding: $gutter 0;
+    font-size: 11px;
+}

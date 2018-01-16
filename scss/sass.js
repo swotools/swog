@@ -20,36 +20,16 @@ module.exports = function configureRubySass(grunt) {
 	};
 	grunt.config.merge({
 		sass: {
-			bootstrap: {
+			style: {
 				options: options,
 				files: {
-					'<%=pkg.distdir%>/css/<%= pkg.framework.name %>.css': './scss/bs3/<%= pkg.framework.name %>.scss'
+					'<%=pkg.distdir%>/css/app.css': './scss/app.scss'
 				}
 			},
-			// extras: {
-			//   options: options,
-			//   files: {
-			//     'dist/css/<%= pkg.name %>-flex.css': 'scss/<%= pkg.name %>-flex.scss',
-			//     'dist/css/<%= pkg.name %>-grid.css': 'scss/<%= pkg.name %>-grid.scss',
-			//     'dist/css/<%= pkg.name %>-reboot.css': 'scss/<%= pkg.name %>-reboot.scss'
-			//   }
-			// },
-			swog: {
-				options: options,
-				files: {
-					'<%=pkg.distdir%>/css/<%= pkg.name %>.css': './scss/swog/<%= pkg.name %>.scss'
-				}
-			},
-			bootstrapdist: {
+			styledist: {
 				options: optionsDist,
 				files: {
-					'<%=pkg.distdir%>/css/<%= pkg.framework.name %>.min.css': './scss/bs3/<%= pkg.framework.name %>.scss'
-				}
-			},
-			swogdist: {
-				options: optionsDist,
-				files: {
-					'<%=pkg.distdir%>/css/<%= pkg.name %>.min.css': './scss/swog/<%= pkg.name %>.scss'
+					'<%=pkg.distdir%>/css/app.min.css': './scss/app.scss'
 				}
 			}
 		},
