@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    padding-top: $navbar-h;
+    padding-top: $navbar-height;
 
     &.authpage {
         margin: 0;
@@ -15,8 +15,8 @@ body {
     }
 
     &.errorpage {
-      margin: 0;
-      padding: 0;
+        margin: 0;
+        padding: 0;
     }
 
     &.cover {
@@ -34,12 +34,12 @@ h5 {
 
 .navbar {
     .navbar-brand {
-        margin-right: $gutter;
+        margin-right: $grid-gutter-width;
         padding: 0 7px;
         //padding: 5px;
         img {
             height: 100%;
-            max-height: $navbar-h;
+            max-height: $navbar-height;
             padding: 5px;
             width: 100%;
         }
@@ -48,11 +48,11 @@ h5 {
 
 .wrapper {
     background-color: $bgwrapper;
-    padding: $gutter 0;
+    padding: $grid-gutter-width 0;
 }
 
 .alertsys {
-    margin: $gutter;
+    margin: $grid-gutter-width;
 }
 @media (min-width: 1200px) {
     #sidebar.affix-top {
@@ -62,7 +62,7 @@ h5 {
 
     #sidebar.affix {
         position: fixed;
-        top: $navbar-h + 15;
+        top: $navbar-height + 15;
         width: 273.75px;
     }
 
@@ -79,7 +79,7 @@ h5 {
 
     #sidebar.affix {
         position: fixed;
-        top: $navbar-h + 15;
+        top: $navbar-height + 15;
         width: 223.75px;
     }
 
@@ -134,7 +134,7 @@ h5 {
 }
 
 .authbox {
-    padding: $gutter;
+    padding: $grid-gutter-width;
     background-color: white;
     border-radius: 5px;
 
@@ -151,7 +151,7 @@ h5 {
     .authinfo {}
 
     .authfooter {
-        margin-top: $gutter;
+        margin-top: $grid-gutter-width;
         font-size: 11px;
     }
 }
@@ -159,6 +159,6 @@ h5 {
 .footer {
     border-top: 1px solid darken(#f2f3f3, 15%);
     width: 100%;
-    padding: $gutter 0;
+    padding: $grid-gutter-width 0;
     font-size: 11px;
 }
